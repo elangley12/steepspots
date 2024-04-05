@@ -42,6 +42,8 @@ class Users(db.model):
     password = db.Column(db.Varchar(30), nullable=False)
     # start_date = db.Column(db.DateTime, default=`now()`)
 
+    favorite = db.relationship('Favorite', back_populates='userFavorites')
+
 
 class UserFavorites(db.model):
     """User's favorite teas."""
@@ -52,6 +54,8 @@ class UserFavorites(db.model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     tea_id = db.Column(db.Integer, db.ForeignKey('teas.tea_id'), nullable=False)
     # date_favorited = db.Column(db.DateTime, default=`now()`)
+
+    user = db.relationship('User', back_populates='userFavorites')
 
 
 class UserRatings(db.model):
@@ -79,7 +83,19 @@ class UserReviews(db.model):
 
 
 class Teas(db.model):
-    pass
+    """Teas."""
+
+    __tablename__ = 'teas'
+
+    tea_id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    tea_group = db.Column(db.varchar, nullable=False) # green, black, oolong, etc
+    tea_brand = db.Column(db.varchar(75), nullable=False) # lipton, etc
+    brand_flavor = db.Column(db.varchar(75), nullable=False) # none, sleepytime, peace, etc
+    tea_name = db.Column(db.varchar(50), nullable=False) # milk tea with boba, iced tea with lemon
+    tea_class = db.Column(db.varchar, nullable=False) # herbal, decaf, caffeinated, etc
+    caff_range_mg = db.Column(db.varchar, nullable=False) # 90-120mg, 0-30 mg, etc
+    hot_cold = db.Column(db.varchar(4), nullable=False)
+    # date_added = db.Column(db.DateTime, default=`now()`)
 
 
 class FlavorProfiles(db.model):
