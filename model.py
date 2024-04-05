@@ -42,7 +42,8 @@ class Users(db.model):
     password = db.Column(db.Varchar(30), nullable=False)
     # start_date = db.Column(db.DateTime, default=`now()`)
 
-    favorite = db.relationship('Favorite', back_populates='userFavorites')
+    favorite = db.relationship('Favorite', back_populates='userFavorites') # do I need this here? or just on the many side?
+    assoc_user_tea = db.relationship('AssocUserTea', back_populates='assocUserTeas')
 
 
 class UserFavorites(db.model):
@@ -97,6 +98,8 @@ class Teas(db.model):
     hot_cold = db.Column(db.varchar(4), nullable=False)
     # date_added = db.Column(db.DateTime, default=`now()`)
 
+    assoc_user_tea = db.relationship('AssocUserTea', back_populates='assocUserTeas')
+
 
 class FlavorProfiles(db.model):
     pass
@@ -115,7 +118,16 @@ class FoodPairings(db.model):
 
 
 class AssocUserTeas(db.model):
-    pass
+    """Association table between Users and Teas."""
+
+    __tablename__ = 'assocUserTeas'
+
+    user_tea_id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
+    tea_id = db.Column(db.Integer, db.ForeignKey('teas.tea_id'), nullable=False)
+
+    user = db.relationship('User', back_populates='assocUserTeas')
+    tea = db.relationship('Tea', back_populates='assocUserTeas')
 
 
 class AssocTeaFlavors(db.model):
