@@ -31,19 +31,51 @@ db = SQLAlchemy()
 #     MVP table section
 
 class Users(db.model):
-    pass
+    """User."""
+
+    __tablename__ = 'users'
+
+    user_id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    fname = db.Column(db.Varchar(30), nullable=False)
+    lname = db.Column(db.Varchar(30), nullable=False)
+    email = db.Column(db.Varchar(75), nullable=False)
+    password = db.Column(db.Varchar(30), nullable=False)
+    # start_date = db.Column(db.DateTime, default=`now()`)
 
 
 class UserFavorites(db.model):
-    pass
+    """User's favorite teas."""
+
+    __tablename__ = 'userFavorites'
+
+    user_fav_id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
+    tea_id = db.Column(db.Integer, db.ForeignKey('teas.tea_id'), nullable=False)
+    # date_favorited = db.Column(db.DateTime, default=`now()`)
 
 
 class UserRatings(db.model):
-    pass
+    """User's ratings of teas."""
+
+    __tablename__ = 'userRatings'
+
+    rating_id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
+    tea_id = db.Column(db.Integer, db.ForeignKey('teas.tea_id'), nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
+    # date_rated = db.Column(db.DateTime, default=`now()`)
 
 
 class UserReviews(db.model):
-    pass
+    """User's reviews of teas."""
+
+    __tablename__ = 'userReviews'
+
+    review_id = db.Column(db.Integer, db.ForeignKey('userRatings.rating_id'), primary_key=True, autoincrement=True, nullable=False) # am I doing this right if review_id and rating_id are one to one?
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
+    tea_id = db.Column(db.Integer, db.ForeignKey('teas.tea_id'), nullable=False)
+    review = db.Column(db.varchar(255), nullable=True)
+    # date_reviewed = db.Column(db.DateTime, default=`now()`)
 
 
 class Teas(db.model):
