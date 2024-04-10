@@ -323,7 +323,31 @@ class TeaSources(db.Model):
 
 
 class TeaImages(db.Model):
-    
+    """Tea images."""
+
+    __tablename__ = 'teaImages'
+
+    image_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_id = db.Column(
+        db.Integer,
+        nullable=False
+    )
+    user_id = db.Column(
+        db.Integer,
+        nullable=False
+    )
+    tea_image = db.Column(
+        db.Image,
+        nullable=False
+    )
+
+    # TODO
+    # tea_id and user_id relationships
 
 
 class AssocUserStores(db.Model):
