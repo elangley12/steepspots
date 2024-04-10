@@ -296,19 +296,95 @@ class FoodPairings(db.Model):
 
 
 class AssocTeaFlavors(db.Model):
-    pass
+    """Association between teas and flavors."""
+
+    __tablename__ = 'assocTeaFlavors'
+
+    tea_flavor_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teas.tea_id'),
+        nullable=False
+    )
+    flavor_id = db.Column(
+        db.Integer,
+        db.ForeignKey('flavorProfiles.flavor_id'),
+        nullable=False
+    )
 
 
 class AssocTeaAddIns(db.Model):
-    pass
+    """Association between teas and add-ins."""
+
+    __tablename__ = 'assocTeaAddIns'
+
+    tea_add_in_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teas.tea_id'),
+        nullable=False
+    )
+    add_in_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teaAddIns.add_in_id'),
+        nullable=False
+    )
 
 
 class AssocTeaIngredients(db.Model):
-    pass
+    """Association table between teas and ingredients."""
+
+    __tablename__ = 'assocTeaIngredients'
+
+    tea_ingre_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teas.tea_id'),
+        nullable=False
+    )
+    ingre_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teaIngredients.ingre_id'),
+        nullable=False
+    )
 
 
 class AssocTeaPairings(db.Model):
-    pass
+    """Association between teas and food parings."""
+
+    __tablename__ = 'assocTeaPairings'
+
+    tea_pairing_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teas.tea_id'),
+        nullable=False
+    )
+    pairing_id = db.Column(
+        db.Integer,
+        db.ForeignKey('foodPairings.pairing_id'),
+        nullable=False
+    )
 
 
 ##############################################################################
@@ -362,7 +438,45 @@ class TeaStores(db.Model):
 
 
 class TeaSources(db.Model):
-    pass
+    """Tea sources."""
+
+    __tablename__ = 'teaSources'
+
+    source_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teas.tea_id'),
+        nullable=False
+    )
+    lat_long = db.Column(
+        db.Integer,
+        nullable=False
+    )
+    google_maps_loc = db.Column(
+        db.Integer,
+        nullable=False
+    )
+    continent = db.Column(
+        db.String,
+        nullable=False
+    )
+    country = db.Column(
+        db.String,
+        nullable=False
+    )
+    city = db.Column(
+        db.String,
+        nullable=False
+    )
+    date_added = db.Column(
+        db.DateTime,
+        default=datetime.now()
+    )
 
 
 class TeaImages(db.Model):
@@ -393,15 +507,72 @@ class TeaImages(db.Model):
 
 
 class AssocUserStores(db.Model):
-    pass
+    """Association table between users and stores."""
+
+    __tablename__ = 'assocUserStores'
+
+    user_store_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    user_id = db.Column(
+        db.Integer,
+        db.ForeignKey('users.user_id'),
+        nullable=False
+    )
+    store_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teaStores.store_id'),
+        nullable=False
+    )
 
 
 class AssocTeaStores(db.Model):
-    pass
+    """Association table between teas and stores."""
+
+    __tablename__ = 'assocTeaStores'
+
+    tea_store_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teas.tea_id'),
+        nullable=False
+    )
+    store_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teaStores.store_id'),
+        nullable=False
+    )
 
 
 class AssocTeaSources(db.Model):
-    pass
+    """Association table between teas and sources."""
+
+    __tablename__ = 'assocTeaSources'
+
+    tea_source_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teas.tea_id'),
+        nullable=False
+    )
+    source_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teaSources.source_id'),
+        nullable=False
+    )
 
 
 
