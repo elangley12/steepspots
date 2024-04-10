@@ -136,6 +136,7 @@ class Ratings(db.Model):
     # date_rated = db.Column(db.DateTime, default=`now()`)
 
     user = db.relationship('Users', back_populates='ratings')
+    reviews = db.relationship('Reviews', uselist=False, back_populates='ratings')
 
     # tip: in the lecture slides, ratings are users and reviews are employees 
     # in the one-to-one section
@@ -169,6 +170,7 @@ class Reviews(db.Model):
     # date_reviewed = db.Column(db.DateTime, default=`now()`)
 
     user = db.relationship('Users', back_populates='reviews')
+    ratings = db.relationship('Reviews', uselist=False, back_populates='reviews')
 
 
 class Teas(db.Model):
