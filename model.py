@@ -315,7 +315,50 @@ class AssocTeaPairings(db.Model):
 #    2.0+ version table section
 
 class TeaStores(db.Model):
-    pass
+    """Tea stores."""
+
+    __tablename__ = 'teaStores'
+
+    store_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_id = db.Column(
+        db.Integer,
+        db.ForeignKey('teas.tea_id'),
+        nullable=False
+    )
+    user_id = db.Column(
+        db.Integer,
+        db.ForeignKey('users.user_id'),
+        nullable=False
+    )
+    lat_long = db.Column(
+        db.Integer,
+        nullable=False
+    )
+    google_maps_loc = db.Column(
+        db.Integer,
+        nullable=False
+    )
+    continent = db.Column(
+        db.String,
+        nullable=False
+    )
+    country = db.Column(
+        db.String,
+        nullable=False
+    )
+    city = db.Column(
+        db.String,
+        nullable=False
+    )
+    date_added = db.Column(
+        db.DateTime,
+        default=datetime.now()
+    )
 
 
 class TeaSources(db.Model):
@@ -335,19 +378,18 @@ class TeaImages(db.Model):
     )
     tea_id = db.Column(
         db.Integer,
+        db.ForeignKey('teas.tea_id'),
         nullable=False
     )
     user_id = db.Column(
         db.Integer,
+        db.ForeignKey('users.user_id'),
         nullable=False
     )
     tea_image = db.Column(
         db.Image,
         nullable=False
     )
-
-    # TODO
-    # tea_id and user_id relationships
 
 
 class AssocUserStores(db.Model):
