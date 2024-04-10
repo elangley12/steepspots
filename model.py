@@ -70,6 +70,10 @@ class Users(db.Model):
     )
 
     favorites = db.relationship('Favorites', back_populates='user')
+    ratings = db.relationship('Ratings', back_populates='user')
+    reviews = db.relationship('Reviews', back_populates='user')
+    tried_stores = db.relationship('TeaStores', back_populates='user')
+    tea_images = db.relationship('TeaImages', back_populates='user')
     # assoc_user_tea = db.relationship('AssocUserTea', back_populates='assocUserTeas')
 
     def __repr__(self):
@@ -131,6 +135,8 @@ class Ratings(db.Model):
     )
     # date_rated = db.Column(db.DateTime, default=`now()`)
 
+    user = db.relationship('Users', back_populates='ratings')
+
     # tip: in the lecture slides, ratings are users and reviews are employees 
     # in the one-to-one section
 
@@ -161,6 +167,8 @@ class Reviews(db.Model):
         nullable=True
     )
     # date_reviewed = db.Column(db.DateTime, default=`now()`)
+
+    user = db.relationship('Users', back_populates='reviews')
 
 
 class Teas(db.Model):
@@ -436,6 +444,8 @@ class TeaStores(db.Model):
         default=datetime.now()
     )
 
+    user = db.relationship('Users', back_populates='tried_stores')
+
 
 class TeaSources(db.Model):
     """Tea sources."""
@@ -504,6 +514,8 @@ class TeaImages(db.Model):
         db.Image,
         nullable=False
     )
+
+    user = db.relationship('Users', back_populates='tea_images')
 
 
 class AssocUserStores(db.Model):
