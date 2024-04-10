@@ -259,7 +259,25 @@ class TeaIngredients(db.Model):
 
 
 class FoodPairings(db.Model):
-    pass
+    """Tea add-ins, i.e. things that are in the cup not the bag."""
+
+    __tablename__ = 'foodPairings'
+
+    pairing_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    pairing_group = db.Column( # cheese, fruit, etc
+        db.String,
+        nullable=False
+    )
+
+    pairing_name = db.Column(
+        db.String,
+        nullable=False
+    )
 
 
 # class AssocUserTeas(db.Model):
@@ -305,7 +323,7 @@ class TeaSources(db.Model):
 
 
 class TeaImages(db.Model):
-    pass
+    
 
 
 class AssocUserStores(db.Model):
