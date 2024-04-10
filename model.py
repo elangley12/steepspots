@@ -69,10 +69,11 @@ class Users(db.Model):
         default=datetime.now()
     )
 
+    # tea = db.relationship() association is found through UserFavorites()
     favorites = db.relationship('Favorites', back_populates='user')
     ratings = db.relationship('Ratings', back_populates='user')
     reviews = db.relationship('Reviews', back_populates='user')
-    tried_stores = db.relationship('TeaStores', back_populates='user')
+    tried_stores = db.relationship('AssocUserStores', back_populates='users')
     tea_images = db.relationship('TeaImages', back_populates='user')
     # assoc_user_tea = db.relationship('AssocUserTea', back_populates='assocUserTeas')
 
@@ -216,6 +217,8 @@ class Teas(db.Model):
     )
     # date_added = db.Column(db.DateTime, default=`now()`)
 
+    # user = db.relationship() association is found through UserFavorites()
+    stores = db.relationship('AssocTeaStores', back_populates='teas')
     saved_by = db.relationship('Favorites', back_populates='tea')
     tea_images = db.relationship('TeaImages', back_populates='tea')
     ratings = db.relationship('Ratings', back_populates='tea')
@@ -451,7 +454,7 @@ class TeaStores(db.Model):
         default=datetime.now()
     )
 
-    user = db.relationship('Users', back_populates='tried_stores')
+    users = db.relationship('AssocUserStores', back_populates='tried_stores')
 
 
 class TeaSources(db.Model):
@@ -548,6 +551,9 @@ class AssocUserStores(db.Model):
         nullable=False
     )
 
+    users = db.relationship('Users', back_populates='tried_stores')
+    stores = db.relationship('TeaStores', back_populates='users')
+
 
 class AssocTeaStores(db.Model):
     """Association table between teas and stores."""
@@ -570,6 +576,8 @@ class AssocTeaStores(db.Model):
         db.ForeignKey('teaStores.store_id'),
         nullable=False
     )
+
+    teas = db.relationship('Teas', back_populates='stores')
 
 
 class AssocTeaSources(db.Model):
