@@ -242,7 +242,20 @@ class TeaAddIns(db.Model):
 
 
 class TeaIngredients(db.Model):
-    pass
+    """Tea ingredients, i.e. what's in the bag."""
+
+    __tablename__ = 'teaIngredients'
+
+    ingre_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    ingre_name = db.Column(
+        db.String,
+        nullable=False
+    )
 
 
 class FoodPairings(db.Model):
