@@ -36,7 +36,7 @@ now = datetime.now()
 ##############################################################################
 #     MVP table section
 
-class Users(db.model):
+class Users(db.Model):
     """User."""
 
     __tablename__ = 'users'
@@ -46,37 +46,38 @@ class Users(db.model):
         primary_key=True,
         autoincrement=True,
         nullable=False
-        )
+    )
     fname = db.Column(
-        db.Varchar(30),
+        db.String(30),
         nullable=False
-        )
+    )
     lname = db.Column(
-        db.Varchar(30),
+        db.String(30),
         nullable=False
-        )
+    )
     email = db.Column(
-        db.Varchar(75),
+        db.String(75),
         nullable=False,
         unique=True
-        )
+    )
     password = db.Column(
-        db.Varchar(30),
+        db.String(30),
         nullable=False
-        )
+    )
     start_date = db.Column(
         db.DateTime,
         default=datetime.now()
-        )
+    )
 
     favorites = db.relationship('Favorites', back_populates='user')
     # assoc_user_tea = db.relationship('AssocUserTea', back_populates='assocUserTeas')
 
     def __repr__(self):
+        """Show information on User."""
         return f'<User user_id={self.user_id} email={self.email}>'
     
 
-class Favorites(db.model):
+class Favorites(db.Model):
     """User's favorite teas."""
 
     __tablename__ = 'userFavorites'
@@ -85,24 +86,25 @@ class Favorites(db.model):
         db.Integer,
         primary_key=True,
         autoincrement=True,
-        nullable=False)
+        nullable=False
+    )
     user_id = db.Column(
         db.Integer,
         db.ForeignKey('users.user_id'),
         nullable=False
-        )
+    )
     tea_id = db.Column(
         db.Integer,
         db.ForeignKey('teas.tea_id'),
         nullable=False
-        )
+    )
     # date_favorited = db.Column(db.DateTime, default=`now()`)
 
     user = db.relationship('Users', back_populates='favorites')
     tea = db.relationship('Teas', back_populates='saved_by')
 
 
-class Ratings(db.model):
+class Ratings(db.Model):
     """User's ratings of teas."""
 
     __tablename__ = 'userRatings'
@@ -112,28 +114,28 @@ class Ratings(db.model):
         primary_key=True,
         autoincrement=True,
         nullable=False
-        )
+    )
     user_id = db.Column(
         db.Integer,
         db.ForeignKey('users.user_id'),
         nullable=False
-        )
+    )
     tea_id = db.Column(
         db.Integer,
         db.ForeignKey('teas.tea_id'),
         nullable=False
-        )
+    )
     rating = db.Column( # 1-5 rating
         db.Integer,
         nullable=False
-        )
+    )
     # date_rated = db.Column(db.DateTime, default=`now()`)
 
     # tip: in the lecture slides, ratings are users and reviews are employees 
     # in the one-to-one section
 
 
-class Reviews(db.model):
+class Reviews(db.Model):
     """User's reviews of teas."""
 
     __tablename__ = 'userReviews'
@@ -143,25 +145,25 @@ class Reviews(db.model):
         db.ForeignKey('userRatings.rating_id'),
         primary_key=True,
         nullable=False
-        )
+    )
     user_id = db.Column(
         db.Integer,
         db.ForeignKey('users.user_id'),
         nullable=False
-        )
+    )
     tea_id = db.Column(
         db.Integer,
         db.ForeignKey('teas.tea_id'),
         nullable=False
-        )
+    )
     review = db.Column(
-        db.varchar(255),
+        db.String(255),
         nullable=True
-        )
+    )
     # date_reviewed = db.Column(db.DateTime, default=`now()`)
 
 
-class Teas(db.model):
+class Teas(db.Model):
     """Teas."""
 
     __tablename__ = 'teas'
@@ -171,57 +173,83 @@ class Teas(db.model):
         primary_key=True,
         autoincrement=True,
         nullable=False
-        )
+    )
     tea_group = db.Column( # green, black, oolong, etc
-        db.varchar,
+        db.String,
         nullable=False
-        )
+    )
     tea_brand = db.Column( # lipton, etc
-        db.varchar(75),
+        db.String(75),
         nullable=False
-        )
+    )
     brand_flavor = db.Column( # none, sleepytime, peace, etc
-        db.varchar(75),
+        db.String(75),
         nullable=False
-        )
+    )
     tea_name = db.Column( # milk tea with boba, iced tea with lemon
-        db.varchar(50),
+        db.String(50),
         nullable=False
-        )
+    )
     tea_class = db.Column( # herbal, decaf, caffeinated, etc
-        db.varchar,
+        db.String,
         nullable=False
-        )
+    )
     caff_range_mg = db.Column( # 90-120mg, 0-30 mg, etc
-        db.varchar,
+        db.String,
         nullable=False
-        )
+    )
     hot_cold = db.Column(
-        db.varchar(4),
+        db.String(4),
         nullable=False
-        )
+    )
     # date_added = db.Column(db.DateTime, default=`now()`)
 
     saved_by = db.relationship('Favorites', back_populates='tea')
 
 
-class FlavorProfiles(db.model):
+class FlavorProfiles(db.Model):
+    """Tea flavor profiles."""
+
+    __tablename__ = 'flavorProfiles'
+
+    flavor_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    tea_flavor = db.Column(
+        db.String,
+        nullable=False
+    )
+
+
+class TeaAddIns(db.Model):
+    """Tea add-ins, i.e. things that are in the cup not the bag."""
+
+    __tablename__ = 'teaAddIns'
+
+    add_in_id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+    add_in_name = db.Column(
+        db.String,
+        nullable=False
+    )
+
+
+class TeaIngredients(db.Model):
     pass
 
 
-class TeaAddIns(db.model):
+class FoodPairings(db.Model):
     pass
 
 
-class TeaIngredients(db.model):
-    pass
-
-
-class FoodPairings(db.model):
-    pass
-
-
-# class AssocUserTeas(db.model):
+# class AssocUserTeas(db.Model):
 #     """Association table between Users and Teas."""
 
 #     __tablename__ = 'assocUserTeas'
@@ -236,46 +264,46 @@ class FoodPairings(db.model):
     # this table may be redundant, see userFavorites and decide
 
 
-class AssocTeaFlavors(db.model):
+class AssocTeaFlavors(db.Model):
     pass
 
 
-class AssocTeaAddIns(db.model):
+class AssocTeaAddIns(db.Model):
     pass
 
 
-class AssocTeaIngredients(db.model):
+class AssocTeaIngredients(db.Model):
     pass
 
 
-class AssocTeaPairings(db.model):
+class AssocTeaPairings(db.Model):
     pass
 
 
 ##############################################################################
 #    2.0+ version table section
 
-class TeaStores(db.model):
+class TeaStores(db.Model):
     pass
 
 
-class TeaSources(db.model):
+class TeaSources(db.Model):
     pass
 
 
-class TeaImages(db.model):
+class TeaImages(db.Model):
     pass
 
 
-class AssocUserStores(db.model):
+class AssocUserStores(db.Model):
     pass
 
 
-class AssocTeaStores(db.model):
+class AssocTeaStores(db.Model):
     pass
 
 
-class AssocTeaSources(db.model):
+class AssocTeaSources(db.Model):
     pass
 
 
@@ -283,9 +311,9 @@ class AssocTeaSources(db.model):
 ##############################################################################
 # Connection to DB
 
-def connect_to_db(flask_app, db_uri="postgresql:///your-database-name", echo=True):
+def connect_to_db(flask_app, db_uri="postgresql:///steepspots", echo=True):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
-    flask_app.config["SQLALCHEMY_ECHO"] = echo
+    flask_app.config["SQLALCHEMY_ECHO"] = False
     flask_app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     db.app = flask_app
