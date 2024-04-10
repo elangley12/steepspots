@@ -136,6 +136,7 @@ class Ratings(db.Model):
     # date_rated = db.Column(db.DateTime, default=`now()`)
 
     user = db.relationship('Users', back_populates='ratings')
+    tea = db.relationship('Teas', back_populates='ratings')
     reviews = db.relationship('Reviews', uselist=False, back_populates='ratings')
 
     # tip: in the lecture slides, ratings are users and reviews are employees 
@@ -170,6 +171,7 @@ class Reviews(db.Model):
     # date_reviewed = db.Column(db.DateTime, default=`now()`)
 
     user = db.relationship('Users', back_populates='reviews')
+    tea = db.relationship('Teas', back_populates='reviews')
     ratings = db.relationship('Reviews', uselist=False, back_populates='reviews')
 
 
@@ -215,6 +217,9 @@ class Teas(db.Model):
     # date_added = db.Column(db.DateTime, default=`now()`)
 
     saved_by = db.relationship('Favorites', back_populates='tea')
+    tea_images = db.relationship('TeaImages', back_populates='tea')
+    ratings = db.relationship('Ratings', back_populates='tea')
+    reviews = db.relationship('Reviews', back_populates='tea')
 
 
 class FlavorProfiles(db.Model):
@@ -518,6 +523,7 @@ class TeaImages(db.Model):
     )
 
     user = db.relationship('Users', back_populates='tea_images')
+    tea = db.relationship('Teas', back_populates='tea_images')
 
 
 class AssocUserStores(db.Model):
