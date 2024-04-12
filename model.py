@@ -218,6 +218,7 @@ class Teas(db.Model):
 
     # user = db.relationship() association is found through UserFavorites()
     stores = db.relationship('AssocTeaStores', back_populates='teas')
+    sources = db.relationship('AssocTeaSources', back_populates='teas')
     saved_by = db.relationship('Favorites', back_populates='tea')
     tea_images = db.relationship('TeaImages', back_populates='tea')
     ratings = db.relationship('Ratings', back_populates='tea')
@@ -498,6 +499,8 @@ class TeaSources(db.Model):
         default=datetime.now()
     )
 
+    teas = db.relationship('AssocTeaSources', back_populates='sources')
+
 
 class TeaImages(db.Model):
     """Tea images."""
@@ -602,6 +605,9 @@ class AssocTeaSources(db.Model):
         db.ForeignKey('teaSources.source_id'),
         nullable=False
     )
+
+    teas = db.relationship('Teas', back_populates='sources')
+    sources = db.relationship ('TeaSources', back_populates='teas')
 
 
 
