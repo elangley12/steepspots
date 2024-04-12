@@ -219,6 +219,7 @@ class Teas(db.Model):
     # user = db.relationship() association is found through UserFavorites()
     stores = db.relationship('AssocTeaStores', back_populates='teas')
     sources = db.relationship('AssocTeaSources', back_populates='teas')
+    flavors = db.relationship('AssocTeaFlavors', back_populates='teas')
     saved_by = db.relationship('Favorites', back_populates='tea')
     tea_images = db.relationship('TeaImages', back_populates='tea')
     ratings = db.relationship('Ratings', back_populates='tea')
@@ -240,6 +241,8 @@ class FlavorProfiles(db.Model):
         db.String,
         nullable=False
     )
+
+    teas = db.relationship('AssocTeaFlavors', back_populates='flavors')
 
 
 class TeaAddIns(db.Model):
@@ -334,6 +337,9 @@ class AssocTeaFlavors(db.Model):
         db.ForeignKey('flavorProfiles.flavor_id'),
         nullable=False
     )
+
+    teas = db.relationship('Teas', back_populates='flavors')
+    flavors = db.relationship('FlavorProfiles', back_populates='teas')
 
 
 class AssocTeaAddIns(db.Model):
