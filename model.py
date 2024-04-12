@@ -1,11 +1,10 @@
 """Models for SteepSpots app."""
 
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime, timezone, timedelta
 
 db = SQLAlchemy()
-
-from datetime import datetime
-now = datetime.now()
 
 # link to data model:
 # https://dbdiagram.io/d/SteepSpots-660c79fb03593b6b6101cfe5
@@ -455,6 +454,7 @@ class TeaStores(db.Model):
     )
 
     users = db.relationship('AssocUserStores', back_populates='tried_stores')
+    teas = db.relationship('AssocTeaStores', back_populates='stores')
 
 
 class TeaSources(db.Model):
@@ -578,6 +578,7 @@ class AssocTeaStores(db.Model):
     )
 
     teas = db.relationship('Teas', back_populates='stores')
+    stores = db.relationship ('TeaStores', back_populates='teas')
 
 
 class AssocTeaSources(db.Model):
