@@ -222,6 +222,7 @@ class Teas(db.Model):
     flavors = db.relationship('AssocTeaFlavors', back_populates='teas')
     add_ins = db.relationship('AssocTeaAddIns', back_populates='teas')
     ingredients = db.relationship('AssocTeaIngredients', back_populates='teas')
+    food_pairings = db.relationship('AssocTeaPairings', back_populates='teas')
     saved_by = db.relationship('Favorites', back_populates='tea')
     tea_images = db.relationship('TeaImages', back_populates='tea')
     ratings = db.relationship('Ratings', back_populates='tea')
@@ -305,6 +306,8 @@ class FoodPairings(db.Model):
         db.String,
         nullable=False
     )
+
+    teas = db.relationship('AssocTeaPairings', back_populates='food_pairings')
 
 
 # class AssocUserTeas(db.Model):
@@ -421,6 +424,9 @@ class AssocTeaPairings(db.Model):
         db.ForeignKey('foodPairings.pairing_id'),
         nullable=False
     )
+
+    teas = db.relationship('Teas', back_populates='food_pairings')
+    food_pairings = db.relationship('FoodPairings', back_populates='teas')
 
 
 ##############################################################################
