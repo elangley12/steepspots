@@ -11,7 +11,7 @@ db = SQLAlchemy()
 
 
 ##############################################################################
-#     MVP table section
+# MVP table section
 
 class Users(db.Model):
     """Data model for a user."""
@@ -460,7 +460,7 @@ class AssocTeaPairings(db.Model):
 
 
 ##############################################################################
-#    2.0+ version table section
+# 2.0+ version table section
 
 class TeaStores(db.Model):
     """Data model for tea stores."""
@@ -508,7 +508,7 @@ class TeaStores(db.Model):
         default=datetime.now()
     )
 
-    users = db.relationship('AssocUserStores', back_populates='tried_stores')
+    users = db.relationship('AssocUserStores', back_populates='stores')
     teas = db.relationship('AssocTeaStores', back_populates='stores')
 
     def __repr__(self):
