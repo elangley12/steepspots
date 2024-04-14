@@ -1,3 +1,5 @@
+"""CRUD operations."""
+
 from model import(
     db,
     <tables here>

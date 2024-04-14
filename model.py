@@ -1,4 +1,4 @@
-"""Models for SteepSpots app."""
+"""Data Models for SteepSpots app."""
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -89,7 +89,7 @@ class Favorites(db.Model):
     def __repr__(self):
         """Show info about favorite teas."""
 
-        return f"<user_id= {self.user_id} tea_id= {self.tea_id}>"
+        return f"<Favorites user_id= {self.user_id} tea_id= {self.tea_id}>"
 
 
 class Ratings(db.Model):
@@ -129,7 +129,7 @@ class Ratings(db.Model):
     def __repr__(self):
         """Show info about user tea ratings."""
 
-        return f"<user_id= {self.user_id} tea_id= {self.tea_id} rating= {self.rating}>"
+        return f"<Ratings user_id= {self.user_id} tea_id= {self.tea_id} rating= {self.rating}>"
 
 
 class Reviews(db.Model):
@@ -169,7 +169,7 @@ class Reviews(db.Model):
     def __repr__(self):
         """Show info about a user's tea reviews."""
 
-        return f"<user_id= {self.user_id} tea_id= {self.tea_id} review= {self.review}>"
+        return f"<Reviews user_id= {self.user_id} tea_id= {self.tea_id} review= {self.review}>"
 
 
 class Teas(db.Model):
@@ -231,7 +231,7 @@ class Teas(db.Model):
     def __repr__(self):
         """Show info about teas."""
 
-        return f"<tea_id= {self.tea_id} tea_name= {self.tea_name}>"
+        return f"<Teas tea_id= {self.tea_id} tea_name= {self.tea_name}>"
 
 
 class FlavorProfiles(db.Model):
@@ -255,7 +255,7 @@ class FlavorProfiles(db.Model):
     def __repr__(self):
         """Show info about tea flavor profile."""
 
-        return f"<flavor_id= {self.flavor_id} tea_flavor= {self.tea_flavor}>"
+        return f"<FlavorProfiles flavor_id= {self.flavor_id} tea_flavor= {self.tea_flavor}>"
 
 
 class TeaAddIns(db.Model):
@@ -279,7 +279,7 @@ class TeaAddIns(db.Model):
     def __repr__(self):
         """Show info about tea add-ins."""
 
-        return f"<add_in_id= {self.add_in_id} add_in_name= {self.add_in_name}>"
+        return f"<TeaAddIns add_in_id= {self.add_in_id} add_in_name= {self.add_in_name}>"
 
 
 class TeaIngredients(db.Model):
@@ -303,7 +303,7 @@ class TeaIngredients(db.Model):
     def __repr__(self):
         """Show info about tea bag/blend ingredients."""
 
-        return f"<ingredient_id= {self.ingre_id} ingredient_name= {self.ingre_name}>"
+        return f"<TeaIngredients ingredient_id= {self.ingre_id} ingredient_name= {self.ingre_name}>"
 
 
 class FoodPairings(db.Model):
@@ -332,7 +332,7 @@ class FoodPairings(db.Model):
     def __repr__(self):
         """Show info about food pairings."""
 
-        return f"<pairing_id= {self.pairing_id} pairing_name= {self.pairing_name}>"
+        return f"<FoodPairings pairing_id= {self.pairing_id} pairing_name= {self.pairing_name}>"
 
 
 class AssocTeaFlavors(db.Model):
@@ -363,7 +363,7 @@ class AssocTeaFlavors(db.Model):
     def __repr__(self):
         """Show info about tea_id and flavor_id."""
 
-        return f"<tea_flavor_id= {self.tea_flavor_id} tea_id= {self.tea_id} flavor_id= {self.flavor_id}>"
+        return f"<AssocTeaFlavors tea_flavor_id= {self.tea_flavor_id} tea_id= {self.tea_id} flavor_id= {self.flavor_id}>"
 
 
 class AssocTeaAddIns(db.Model):
@@ -394,7 +394,7 @@ class AssocTeaAddIns(db.Model):
     def __repr__(self):
         """Show info about tea_id and add_in_id."""
 
-        return f"<tea_add_in_id= {self.tea_add_in_id} tea_id= {self.tea_id} add_in_id= {self.add_in_id}>"
+        return f"<AssocTeaAddIns tea_add_in_id= {self.tea_add_in_id} tea_id= {self.tea_id} add_in_id= {self.add_in_id}>"
 
 
 class AssocTeaIngredients(db.Model):
@@ -425,7 +425,7 @@ class AssocTeaIngredients(db.Model):
     def __repr__(self):
         """Show info about tea_id nad ingre_id."""
 
-        return f"<tea_ingre_id= {self.tea_ingre_id} tea_id= {self.tea_id} ingre_id= {self.ingre_id}>"
+        return f"<AssocTeaIngredients tea_ingre_id= {self.tea_ingre_id} tea_id= {self.tea_id} ingre_id= {self.ingre_id}>"
 
 
 class AssocTeaPairings(db.Model):
@@ -456,7 +456,7 @@ class AssocTeaPairings(db.Model):
     def __repr__(self):
         """Show info about tea_id and pairing_id."""
 
-        return f"<tea_pairing_id= {self.tea_pairing_id} tea_id= {self.tea_id} pairing_id= {self.pairing_id}>"
+        return f"<AssocTeaPairings tea_pairing_id= {self.tea_pairing_id} tea_id= {self.tea_id} pairing_id= {self.pairing_id}>"
 
 
 ##############################################################################
@@ -514,7 +514,7 @@ class TeaStores(db.Model):
     def __repr__(self):
         """Show info about tea stores, cafes, and retailers."""
 
-        return f"<store_id= {self.store_id} tea_id= {self.tea_id} user_id= {self.user_id}>"
+        return f"<TeaStores store_id= {self.store_id} tea_id= {self.tea_id} user_id= {self.user_id}>"
 
 
 class TeaSources(db.Model):
@@ -563,7 +563,7 @@ class TeaSources(db.Model):
     def __repr__(self):
         """Show info about tea source locations around the world."""
 
-        return f"<source_id= {self.source_id} tea_id= {self.tea_id}>"
+        return f"<TeaSources source_id= {self.source_id} tea_id= {self.tea_id}>"
 
 
 class TeaImages(db.Model):
@@ -603,7 +603,7 @@ class TeaImages(db.Model):
     def __repr__(self):
         """Show info about tea images."""
 
-        return f"<image_id= {self.image_id} tea_id= {self.tea_id} user_id= {self.user_id}>"
+        return f"<TeaImages image_id= {self.image_id} tea_id= {self.tea_id} user_id= {self.user_id}>"
 
 
 class AssocUserStores(db.Model):
@@ -634,7 +634,7 @@ class AssocUserStores(db.Model):
     def __repr__(self):
         """Show info about user_id and store_id."""
 
-        return f"<user_store_id= {self.user_store_id} user_id= {self.user_id} store_id= {self.store_id}>"
+        return f"<AssocUserStores user_store_id= {self.user_store_id} user_id= {self.user_id} store_id= {self.store_id}>"
 
 
 class AssocTeaStores(db.Model):
@@ -665,7 +665,7 @@ class AssocTeaStores(db.Model):
     def __repr__(self):
         """Show info about tea_id and store_id."""
 
-        return f"<tea_store_id= {self.tea_store_id} tea_id= {self.tea_id} store_id= {self.store_id}>"
+        return f"<AssocTeaStores tea_store_id= {self.tea_store_id} tea_id= {self.tea_id} store_id= {self.store_id}>"
 
 
 class AssocTeaSources(db.Model):
@@ -696,7 +696,7 @@ class AssocTeaSources(db.Model):
     def __repr__(self):
         """Show info about tea_id and source_id."""
 
-        return f"<tea_source_id= {self.tea_source_id} tea_id= {self.tea_id} source_id= {self.source_id}>"
+        return f"<AssocTeaSources tea_source_id= {self.tea_source_id} tea_id= {self.tea_id} source_id= {self.source_id}>"
 
 
 
