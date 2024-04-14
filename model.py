@@ -164,7 +164,7 @@ class Reviews(db.Model):
 
     user = db.relationship('Users', back_populates='reviews')
     tea = db.relationship('Teas', back_populates='reviews')
-    ratings = db.relationship('Reviews', uselist=False, back_populates='reviews')
+    ratings = db.relationship('Ratings', uselist=False, back_populates='reviews')
 
     def __repr__(self):
         """Show info about a user's tea reviews."""
