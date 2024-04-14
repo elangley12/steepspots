@@ -587,10 +587,11 @@ class TeaImages(db.Model):
         db.ForeignKey('users.user_id'),
         nullable=False
     )
-    tea_image = db.Column(
-        db.Image,
-        nullable=False
-    )
+    # TODO - correct image class for SQLAlchemy:
+    # tea_image = db.Column(
+    #     db.Image,
+    #     nullable=False
+    # )
     date_added = db.Column(
         db.DateTime,
         default=datetime.now()
