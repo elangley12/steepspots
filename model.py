@@ -11,28 +11,6 @@ db = SQLAlchemy()
 
 
 ##############################################################################
-# Model example
-
-
-# class Employee(db.Model):
-#     """Employee."""
-
-#     __tablename__ = "employees"
-
-#     employee_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-#     name = db.Column(db.String(20), nullable=False, unique=True)
-#     state = db.Column(db.String(2), nullable=False, default='CA')
-#     dept_code = db.Column(db.String(5), db.ForeignKey('departments.dept_code'))
-#     salary = db.Column(db.Integer, nullable=True)
-
-#     dept = db.relationship('Department', back_populates="employees")
-#     variable = db.relationship('ClassName', back_populates='other variable name')
-
-#     def __repr__(self):
-#         return f"<Employee id={self.employee_id} name={self.name}>"
-
-
-##############################################################################
 #     MVP table section
 
 class Users(db.Model):
@@ -107,6 +85,11 @@ class Favorites(db.Model):
     user = db.relationship('Users', back_populates='favorites')
     tea = db.relationship('Teas', back_populates='saved_by')
 
+    def __repr__(self):
+        """Show info about favorite teas."""
+
+        return f"<user_id= {self.user_id} tea_id= {self.tea_id}>"
+
 
 class Ratings(db.Model):
     """User's ratings of teas."""
@@ -139,8 +122,10 @@ class Ratings(db.Model):
     tea = db.relationship('Teas', back_populates='ratings')
     reviews = db.relationship('Reviews', uselist=False, back_populates='ratings')
 
-    # tip: in the lecture slides, ratings are users and reviews are employees 
-    # in the one-to-one section
+    def __repr__(self):
+        """Show info about user tea ratings."""
+
+        return f"<user_id= {self.user_id} tea_id= {self.tea_id} rating= {self.rating}>"
 
 
 class Reviews(db.Model):
@@ -173,6 +158,11 @@ class Reviews(db.Model):
     user = db.relationship('Users', back_populates='reviews')
     tea = db.relationship('Teas', back_populates='reviews')
     ratings = db.relationship('Reviews', uselist=False, back_populates='reviews')
+
+    def __repr__(self):
+        """Show info about a user's tea reviews."""
+
+        return f"<user_id= {self.user_id} tea_id= {self.tea_id} review= {self.review}>"
 
 
 class Teas(db.Model):
@@ -228,6 +218,11 @@ class Teas(db.Model):
     ratings = db.relationship('Ratings', back_populates='tea')
     reviews = db.relationship('Reviews', back_populates='tea')
 
+    def __repr__(self):
+        """Show info about teas."""
+
+        return f"<tea_id= {self.tea_id} tea_name= {self.tea_name}>"
+
 
 class FlavorProfiles(db.Model):
     """Tea flavor profiles."""
@@ -246,6 +241,11 @@ class FlavorProfiles(db.Model):
     )
 
     teas = db.relationship('AssocTeaFlavors', back_populates='flavors')
+
+    def __repr__(self):
+        """Show info about tea flavor profile."""
+
+        return f"<flavor_id= {self.flavor_id} tea_flavor= {self.tea_flavor}>"
 
 
 class TeaAddIns(db.Model):
@@ -266,6 +266,11 @@ class TeaAddIns(db.Model):
 
     teas = db.relationship('AssocTeaAddIns', back_populates='add_ins')
 
+    def __repr__(self):
+        """Show info about tea add-ins."""
+
+        return f"<add_in_id= {self.add_in_id} add_in_name= {self.add_in_name}>"
+
 
 class TeaIngredients(db.Model):
     """Tea ingredients, i.e. what's in the bag."""
@@ -285,9 +290,14 @@ class TeaIngredients(db.Model):
 
     teas = db.relationship('AssocTeaIngredients', back_populates='ingredients')
 
+    def __repr__(self):
+        """Show info about tea bag/blend ingredients."""
+
+        return f"<ingredient_id= {self.ingre_id} ingredient_name= {self.ingre_name}>"
+
 
 class FoodPairings(db.Model):
-    """Tea add-ins, i.e. things that are in the cup not the bag."""
+    """Foods that pair well with certain teas."""
 
     __tablename__ = 'foodPairings'
 
@@ -308,6 +318,11 @@ class FoodPairings(db.Model):
     )
 
     teas = db.relationship('AssocTeaPairings', back_populates='food_pairings')
+
+    def __repr__(self):
+        """Show info about food pairings."""
+
+        return f"<pairing_id= {self.pairing_id} pairing_name= {self.pairing_name}>"
 
 
 # class AssocUserTeas(db.Model):
@@ -350,6 +365,11 @@ class AssocTeaFlavors(db.Model):
     teas = db.relationship('Teas', back_populates='flavors')
     flavors = db.relationship('FlavorProfiles', back_populates='teas')
 
+    def __repr__(self):
+        """Show info about tea_id and flavor_id."""
+
+        return f"<tea_flavor_id= {self.tea_flavor_id} tea_id= {self.tea_id} flavor_id= {self.flavor_id}>"
+
 
 class AssocTeaAddIns(db.Model):
     """Association between teas and add-ins."""
@@ -375,6 +395,11 @@ class AssocTeaAddIns(db.Model):
 
     teas = db.relationship('Teas', back_populates='add_ins')
     add_ins = db.relationship('TeaAddIns', back_populates='teas')
+
+    def __repr__(self):
+        """Show info about tea_id and add_in_id."""
+
+        return f"<tea_add_in_id= {self.tea_add_in_id} tea_id= {self.tea_id} add_in_id= {self.add_in_id}>"
 
 
 class AssocTeaIngredients(db.Model):
@@ -402,6 +427,11 @@ class AssocTeaIngredients(db.Model):
     teas = db.relationship('Teas', back_populates='ingredients')
     ingredients = db.relationship('TeaIngredients', back_populates='teas')
 
+    def __repr__(self):
+        """Show info about tea_id nad ingre_id."""
+
+        return f"<tea_ingre_id= {self.tea_ingre_id} tea_id= {self.tea_id} ingre_id= {self.ingre_id}>"
+
 
 class AssocTeaPairings(db.Model):
     """Association between teas and food parings."""
@@ -427,6 +457,11 @@ class AssocTeaPairings(db.Model):
 
     teas = db.relationship('Teas', back_populates='food_pairings')
     food_pairings = db.relationship('FoodPairings', back_populates='teas')
+
+    def __repr__(self):
+        """Show info about tea_id and pairing_id."""
+
+        return f"<tea_pairing_id= {self.tea_pairing_id} tea_id= {self.tea_id} pairing_id= {self.pairing_id}>"
 
 
 ##############################################################################
@@ -481,6 +516,11 @@ class TeaStores(db.Model):
     users = db.relationship('AssocUserStores', back_populates='tried_stores')
     teas = db.relationship('AssocTeaStores', back_populates='stores')
 
+    def __repr__(self):
+        """Show info about tea stores, cafes, and retailers."""
+
+        return f"<store_id= {self.store_id} tea_id= {self.tea_id} user_id= {self.user_id}>"
+
 
 class TeaSources(db.Model):
     """Tea sources."""
@@ -525,6 +565,11 @@ class TeaSources(db.Model):
 
     teas = db.relationship('AssocTeaSources', back_populates='sources')
 
+    def __repr__(self):
+        """Show info about tea source locations around the world."""
+
+        return f"<source_id= {self.source_id} tea_id= {self.tea_id}>"
+
 
 class TeaImages(db.Model):
     """Tea images."""
@@ -555,6 +600,11 @@ class TeaImages(db.Model):
     user = db.relationship('Users', back_populates='tea_images')
     tea = db.relationship('Teas', back_populates='tea_images')
 
+    def __repr__(self):
+        """Show info about tea images."""
+
+        return f"<image_id= {self.image_id} tea_id= {self.tea_id} user_id= {self.user_id}>"
+
 
 class AssocUserStores(db.Model):
     """Association table between users and stores."""
@@ -580,6 +630,11 @@ class AssocUserStores(db.Model):
 
     users = db.relationship('Users', back_populates='tried_stores')
     stores = db.relationship('TeaStores', back_populates='users')
+
+    def __repr__(self):
+        """Show info about user_id and store_id."""
+
+        return f"<user_store_id= {self.user_store_id} user_id= {self.user_id} store_id= {self.store_id}>"
 
 
 class AssocTeaStores(db.Model):
@@ -607,6 +662,11 @@ class AssocTeaStores(db.Model):
     teas = db.relationship('Teas', back_populates='stores')
     stores = db.relationship ('TeaStores', back_populates='teas')
 
+    def __repr__(self):
+        """Show info about tea_id and store_id."""
+
+        return f"<tea_store_id= {self.tea_store_id} tea_id= {self.tea_id} store_id= {self.store_id}>"
+
 
 class AssocTeaSources(db.Model):
     """Association table between teas and sources."""
@@ -632,6 +692,11 @@ class AssocTeaSources(db.Model):
 
     teas = db.relationship('Teas', back_populates='sources')
     sources = db.relationship ('TeaSources', back_populates='teas')
+
+    def __repr__(self):
+        """Show info about tea_id and source_id."""
+
+        return f"<tea_source_id= {self.tea_source_id} tea_id= {self.tea_id} source_id= {self.source_id}>"
 
 
 
