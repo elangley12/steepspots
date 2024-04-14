@@ -46,13 +46,11 @@ class Users(db.Model):
         default=datetime.now()
     )
 
-    # tea = db.relationship() association is found through UserFavorites()
     favorites = db.relationship('Favorites', back_populates='user')
     ratings = db.relationship('Ratings', back_populates='user')
     reviews = db.relationship('Reviews', back_populates='user')
     tried_stores = db.relationship('AssocUserStores', back_populates='users')
     tea_images = db.relationship('TeaImages', back_populates='user')
-    # assoc_user_tea = db.relationship('AssocUserTea', back_populates='assocUserTeas')
 
     def __repr__(self):
         """Show information on User."""
@@ -323,21 +321,6 @@ class FoodPairings(db.Model):
         """Show info about food pairings."""
 
         return f"<pairing_id= {self.pairing_id} pairing_name= {self.pairing_name}>"
-
-
-# class AssocUserTeas(db.Model):
-#     """Association table between Users and Teas."""
-
-#     __tablename__ = 'assocUserTeas'
-
-#     user_tea_id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
-#     tea_id = db.Column(db.Integer, db.ForeignKey('teas.tea_id'), nullable=False)
-
-#     user = db.relationship('User', back_populates='assocUserTeas')
-#     tea = db.relationship('Tea', back_populates='assocUserTeas')
-
-    # this table may be redundant, see userFavorites and decide
 
 
 class AssocTeaFlavors(db.Model):
