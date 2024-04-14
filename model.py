@@ -14,7 +14,7 @@ db = SQLAlchemy()
 #     MVP table section
 
 class Users(db.Model):
-    """User."""
+    """Data model for a user."""
 
     __tablename__ = 'users'
 
@@ -58,7 +58,7 @@ class Users(db.Model):
     
 
 class Favorites(db.Model):
-    """User's favorite teas."""
+    """Data model for a user's favorite teas."""
 
     __tablename__ = 'userFavorites'
 
@@ -93,7 +93,7 @@ class Favorites(db.Model):
 
 
 class Ratings(db.Model):
-    """User's ratings of teas."""
+    """Data model for a user's ratings of teas."""
 
     __tablename__ = 'userRatings'
 
@@ -133,7 +133,7 @@ class Ratings(db.Model):
 
 
 class Reviews(db.Model):
-    """User's reviews of teas."""
+    """Data model for a user's reviews of teas."""
 
     __tablename__ = 'userReviews'
 
@@ -173,7 +173,7 @@ class Reviews(db.Model):
 
 
 class Teas(db.Model):
-    """Teas."""
+    """Data model for teas tried by users."""
 
     __tablename__ = 'teas'
 
@@ -235,7 +235,7 @@ class Teas(db.Model):
 
 
 class FlavorProfiles(db.Model):
-    """Tea flavor profiles."""
+    """Data model for a tea flavor profile."""
 
     __tablename__ = 'flavorProfiles'
 
@@ -259,7 +259,7 @@ class FlavorProfiles(db.Model):
 
 
 class TeaAddIns(db.Model):
-    """Tea add-ins, i.e. things that are in the cup not the bag."""
+    """Data model for tea add-ins, i.e. things that are in the cup not the bag."""
 
     __tablename__ = 'teaAddIns'
 
@@ -283,7 +283,7 @@ class TeaAddIns(db.Model):
 
 
 class TeaIngredients(db.Model):
-    """Tea ingredients, i.e. what's in the bag."""
+    """Data model for tea ingredients, i.e. what's in the bag."""
 
     __tablename__ = 'teaIngredients'
 
@@ -307,7 +307,7 @@ class TeaIngredients(db.Model):
 
 
 class FoodPairings(db.Model):
-    """Foods that pair well with certain teas."""
+    """Data model for foods that pair well with certain teas."""
 
     __tablename__ = 'foodPairings'
 
@@ -336,7 +336,7 @@ class FoodPairings(db.Model):
 
 
 class AssocTeaFlavors(db.Model):
-    """Association between teas and flavors."""
+    """Association model between teas and flavors."""
 
     __tablename__ = 'assocTeaFlavors'
 
@@ -367,7 +367,7 @@ class AssocTeaFlavors(db.Model):
 
 
 class AssocTeaAddIns(db.Model):
-    """Association between teas and add-ins."""
+    """Association model between teas and add-ins."""
 
     __tablename__ = 'assocTeaAddIns'
 
@@ -398,7 +398,7 @@ class AssocTeaAddIns(db.Model):
 
 
 class AssocTeaIngredients(db.Model):
-    """Association table between teas and ingredients."""
+    """Association model between teas and ingredients."""
 
     __tablename__ = 'assocTeaIngredients'
 
@@ -429,7 +429,7 @@ class AssocTeaIngredients(db.Model):
 
 
 class AssocTeaPairings(db.Model):
-    """Association between teas and food parings."""
+    """Association model between teas and food parings."""
 
     __tablename__ = 'assocTeaPairings'
 
@@ -463,7 +463,7 @@ class AssocTeaPairings(db.Model):
 #    2.0+ version table section
 
 class TeaStores(db.Model):
-    """Tea stores."""
+    """Data model for tea stores."""
 
     __tablename__ = 'teaStores'
 
@@ -518,7 +518,7 @@ class TeaStores(db.Model):
 
 
 class TeaSources(db.Model):
-    """Tea sources."""
+    """Data model for tea sources."""
 
     __tablename__ = 'teaSources'
 
@@ -567,7 +567,7 @@ class TeaSources(db.Model):
 
 
 class TeaImages(db.Model):
-    """Tea images."""
+    """Data model for tea images."""
 
     __tablename__ = 'teaImages'
 
@@ -606,7 +606,7 @@ class TeaImages(db.Model):
 
 
 class AssocUserStores(db.Model):
-    """Association table between users and stores."""
+    """Association model between users and stores."""
 
     __tablename__ = 'assocUserStores'
 
@@ -637,7 +637,7 @@ class AssocUserStores(db.Model):
 
 
 class AssocTeaStores(db.Model):
-    """Association table between teas and stores."""
+    """Association model between teas and stores."""
 
     __tablename__ = 'assocTeaStores'
 
@@ -668,7 +668,7 @@ class AssocTeaStores(db.Model):
 
 
 class AssocTeaSources(db.Model):
-    """Association table between teas and sources."""
+    """Association model between teas and sources."""
 
     __tablename__ = 'assocTeaSources'
 
