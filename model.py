@@ -78,7 +78,10 @@ class Favorites(db.Model):
         db.ForeignKey('teas.tea_id'),
         nullable=False
     )
-    # date_favorited = db.Column(db.DateTime, default=`now()`)
+    date_favorited = db.Column(
+        db.DateTime,
+        default=datetime.now()
+    )
 
     user = db.relationship('Users', back_populates='favorites')
     tea = db.relationship('Teas', back_populates='saved_by')
@@ -114,7 +117,10 @@ class Ratings(db.Model):
         db.Integer,
         nullable=False
     )
-    # date_rated = db.Column(db.DateTime, default=`now()`)
+    date_rated = db.Column(
+        db.DateTime,
+        default=datetime.now()
+    )
 
     user = db.relationship('Users', back_populates='ratings')
     tea = db.relationship('Teas', back_populates='ratings')
@@ -151,7 +157,10 @@ class Reviews(db.Model):
         db.String(255),
         nullable=True
     )
-    # date_reviewed = db.Column(db.DateTime, default=`now()`)
+    date_reviewed = db.Column(
+        db.DateTime,
+        default=datetime.now()
+    )
 
     user = db.relationship('Users', back_populates='reviews')
     tea = db.relationship('Teas', back_populates='reviews')
@@ -202,7 +211,10 @@ class Teas(db.Model):
         db.String(4),
         nullable=False
     )
-    # date_added = db.Column(db.DateTime, default=`now()`)
+    date_added = db.Column(
+        db.DateTime,
+        default=datetime.now()
+    )
 
     # user = db.relationship() association is found through UserFavorites()
     stores = db.relationship('AssocTeaStores', back_populates='teas')
@@ -578,6 +590,10 @@ class TeaImages(db.Model):
     tea_image = db.Column(
         db.Image,
         nullable=False
+    )
+    date_added = db.Column(
+        db.DateTime,
+        default=datetime.now()
     )
 
     user = db.relationship('Users', back_populates='tea_images')
