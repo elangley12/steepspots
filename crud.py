@@ -52,7 +52,15 @@ def find_user_by_email(email):
 
 
 # delete_user()
+def delete_user(user_id):
+    """Delete a user from the database."""
 
+    user = Users.query.get(user_id)
+
+    db.session.delete(user)
+    db.session.commit()
+
+    return
 
 
 # TODO - Later version CRUD operations:
