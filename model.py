@@ -25,20 +25,20 @@ class Users(db.Model):
         nullable=False
     )
     fname = db.Column(
-        db.String(30),
+        db.String,
         nullable=False
     )
     lname = db.Column(
-        db.String(30),
+        db.String,
         nullable=False
     )
     email = db.Column(
-        db.String(75),
+        db.String,
         nullable=False,
         unique=True
     )
     password = db.Column(
-        db.String(30),
+        db.String,
         nullable=False
     )
     start_date = db.Column(
