@@ -31,17 +31,22 @@ from werkzeug.security import generate_password_hash, check_password_hash
 def create_user(fname, lname, email, password):
     """Create and return a new user."""
 
-    user = Users(
+    new_user = Users(
         fname=fname,
         lname=lname,
         email=email,
-        password=password
+        password=generate_password_hash(password, method='sha256')
     )
 
-    return user
+    db.session.add(new_user)
+    db.session.commit()
+
+    return new_user
 
 
 # find_user_by_email()
+
+
 # delete_user()
 
 # TODO - Later version CRUD operations:
