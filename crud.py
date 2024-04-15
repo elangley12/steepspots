@@ -2,8 +2,25 @@
 
 from model import(
     db,
-    <tables here>
-    )
+    Users,
+    Favorites,
+    Ratings,
+    Reviews,
+    Teas,
+    FlavorProfiles,
+    TeaAddIns,
+    TeaIngredients,
+    FoodPairings,
+    AssocTeaFlavors,
+    AssocTeaAddIns,
+    AssocTeaIngredients,
+    AssocTeaPairings,
+    TeaStores,
+    TeaSources,
+    TeaImages,
+    AssocUserStores,
+    AssocTeaStores,
+    AssocTeaSources,)
 from werkzeug.security import generate_password_hash, check_password_hash
 
 ################################################################################
