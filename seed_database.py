@@ -14,3 +14,6 @@ os.system('createdb steepspots')
 
 model.connect_to_db(server.app)
 model.db.create_all()
+
+with open('data/users.json') as f:
+    user_data = json.loads(f.read())

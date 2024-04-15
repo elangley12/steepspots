@@ -56,6 +56,20 @@ from werkzeug.security import generate_password_hash, check_password_hash
 ################################################################################
 #TEAS
 
+# MVP
+# create_tea()
+# delete_tea()
+
+# TODO - Later version CRUD operations:
+# find_tea_by_id()
+# find_tea_by_group()
+# find_tea_by_brand()
+# find_tea_by_brand_flavor()
+# find_tea_by_name()
+# find_tea_by_class()
+# find_tea_by_caff_level()
+# find_tea_by_temp()
+# find_tea_by_date()
 
 
 ################################################################################
