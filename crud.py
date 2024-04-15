@@ -45,9 +45,15 @@ def create_user(fname, lname, email, password):
 
 
 # find_user_by_email()
+def find_user_by_email(email):
+    """Return a user by email."""
+
+    return Users.query.filter(Users.email == email).first()
 
 
 # delete_user()
+
+
 
 # TODO - Later version CRUD operations:
 # find_user_by_id()
