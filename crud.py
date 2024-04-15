@@ -26,15 +26,16 @@ from werkzeug.security import generate_password_hash, check_password_hash
 ################################################################################
 #USERS
 
-# TODO - CRUD operations:
+# MVP
 # create_user()
+# delete_user()
+
+# TODO - Later version CRUD operations:
 # find_user_by_id()
 # find_user_by_fname()
 # find_user_by_lname()
 # find_user_by_email()
 # find_user_by_date()
-# delete_user()
-
 
 
 ################################################################################
