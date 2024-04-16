@@ -15,17 +15,19 @@ def homepage():
 
     return render_template('homepage.html')
 
+
 @app.route("/users", methods=["POST"])
 def register_user():
     """Create a new user."""
-    fname = request.form.get()
-    lname = request.form.get()
+    fname = request.form.get("fname")
+    lname = request.form.get("lname")
     email = request.form.get("email")
     password = request.form.get("password")
 
     user = crud.find_user_by_email(email)
+
     if user:
-        flash("Cannot create an account with that email. Try again.")
+        flash("Account already exists. Please try again.")
     else:
         user = crud.create_user(fname, lname, email, password)
         db.session.add(user)
