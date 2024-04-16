@@ -9,7 +9,11 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
-#   ... your routes, view functions, and everything else can come later ...
+@app.route('/')
+def homepage():
+    """View homepage."""
+
+    return render_template('homepage.html')
 
 
 
