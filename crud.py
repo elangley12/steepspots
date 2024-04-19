@@ -35,7 +35,7 @@ def create_user(fname, lname, email, password):
         fname=fname,
         lname=lname,
         email=email,
-        password=generate_password_hash(password, method='sha256')
+        password=generate_password_hash(password, method='sha256', salt_length=10)
     )
 
     db.session.add(new_user)

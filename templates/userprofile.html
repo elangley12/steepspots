@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}{{ session["user"] }}{% endblock %}
+
+{% block body %}
+  <h1>Welcome to SteepSpots!</h1>
+
+  
+
+  <a href="/logout"><h2>Click Here to Logout</h2></a>
+
+{% endblock %}
