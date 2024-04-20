@@ -158,7 +158,12 @@ def create_flavor_profile(tea_flavor):
 ################################################################################
 #ASSOC TEA FLAVORS
 
-# TODO - create association on teas and flavors in AssocTeaFlavors (see movie ratings lab)
+def associate_tea_to_flavors(tea, flavors):
+    """Create and return tea to flavor profile tags."""
+
+    tea_flavor_profile = AssocTeaFlavors(teas=tea, flavors=flavors)
+
+    return tea_flavor_profile
 
 
 ################################################################################
