@@ -91,7 +91,7 @@ def delete_user(user_id):
 # MVP
 # create_tea()
 def create_tea(tea_group, tea_brand, brand_flavor, tea_name, tea_class, caff_range_mg, hot_cold):
-    """Create and return a new user."""
+    """Create and return a new tea."""
 
     new_tea = Teas(
         tea_group = tea_group,
