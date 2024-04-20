@@ -31,6 +31,28 @@ for n in range(10):
 
 # TODO
 # create actual flavor profiles
+
+tea_flavor_tags = [
+    "Bitter",
+    "Earthy",
+    "Floral",
+    "Fruity",
+    "Grassy",
+    "Herbaceous",
+    "Malty",
+    "Mineral",
+    "Nutty",
+    "Oceanic",
+    "Rich",
+    "Smoky",
+    "Smooth",
+    "Spiced"
+    "Sweet",
+    "Umami",
+    "Vegetal"
+]
+
+
 # create some actual teas, ~5ish
     # for each tea, attach flavor profile using AssocTeaFlavors() to make connections
 
