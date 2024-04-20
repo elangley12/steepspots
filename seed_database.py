@@ -27,3 +27,11 @@ for n in range(10):
     password = "test123"
 
     user = crud.create_user(fname, lname, email, password)
+
+
+# TODO
+# create actual flavor profiles
+# create some actual teas, ~5ish
+    # for each tea, attach flavor profile using AssocTeaFlavors() to make connections
+
+    # test: query checking for profile connections, then make html with search bar (look at ajax lab order melons)

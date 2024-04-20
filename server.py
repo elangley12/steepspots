@@ -97,6 +97,19 @@ def show_user_profile():
     return render_template("userprofile.html")
 
 
+# route to receive flavor selection from js
+    # run crud to get all teas from db with selected flavor profile (list of objects)
+    # set result list
+    # (what results to show on results page?) for loop through each list of objects
+        # tea1 > name, brandname > add to results list
+        # return result (list of key value pairs that I care about)
+    
+    
+    # (js) for each tea result, make an html element and add to div
+
+
+# plan B: if ajax is not working, consider jinja templating instead (new page)
+
 
 
 if __name__ == "__main__":

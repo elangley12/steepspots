@@ -89,10 +89,11 @@ def delete_user(user_id):
 #TEAS
 
 # MVP
-# create_tea()
-# delete_tea()
+# TODO create_tea()
+# TODO find_tea_by_flavor_profile()
 
 # TODO - Later version CRUD operations:
+# delete_tea()
 # find_tea_by_id()
 # find_tea_by_group()
 # find_tea_by_brand()
