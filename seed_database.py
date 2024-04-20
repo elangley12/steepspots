@@ -20,6 +20,10 @@ model.db.create_all()
 # with open('data/users.json') as f:
 #     user_data = json.loads(f.read())
 
+
+
+# create test users
+
 for n in range(10):
     fname =f'First{n}'
     lname = f'Last{n}'
@@ -29,8 +33,8 @@ for n in range(10):
     user = crud.create_user(fname, lname, email, password)
 
 
-# TODO
-# create actual flavor profiles
+
+# create tea flavor profiles
 
 tea_flavor_tags = [
     "Bitter",
@@ -57,7 +61,12 @@ for tag in tea_flavor_tags:
     flavor_profiles = crud.create_flavor_profile(tea_flavor)
 
 
-# create some actual teas, ~5ish
-    # for each tea, attach flavor profile using AssocTeaFlavors() to make connections
+# create test teas
+
+# tea = crud.create_tea()
+
+# TODO - for each tea, attach flavor profile using AssocTeaFlavors() to make connections:
+# make a tea and flavor dictionary pulling from teas.json and tea_flavor_tags options above for each tea
+# for each tea, add the flavor to crud function and create connection in db for AssocTeaFlavors()
 
     # test: query checking for profile connections, then make html with search bar (look at ajax lab order melons)
