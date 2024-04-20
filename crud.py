@@ -100,7 +100,7 @@ def create_tea(tea_group, tea_brand, brand_flavor, tea_name, tea_class, caff_ran
         tea_name = tea_name,
         tea_class = tea_class,
         caff_range_mg = caff_range_mg,
-        hot_cold
+        hot_cold = hot_cold
     )
 
     db.session.add(new_tea)
