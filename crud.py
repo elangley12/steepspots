@@ -163,6 +163,9 @@ def associate_tea_to_flavors(tea, flavors):
 
     tea_flavor_profile = AssocTeaFlavors(teas=tea, flavors=flavors)
 
+    db.session.add(tea_flavor_profile)
+    db.session.commit()
+
     return tea_flavor_profile
 
 

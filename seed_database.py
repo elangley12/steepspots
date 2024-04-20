@@ -16,9 +16,9 @@ model.connect_to_db(server.app)
 model.db.create_all()
 
 
-# Load user data from JSON file:
-# with open('data/users.json') as f:
-#     user_data = json.loads(f.read())
+Load user data from JSON file:
+with open('data/teas.json') as f:
+    tea_data = json.loads(f.read())
 
 
 
