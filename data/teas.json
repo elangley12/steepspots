@@ -1,0 +1,47 @@
+[
+    {
+        "tea_group": "Green",
+        "tea_brand": "Ito En",
+        "brand_flavor": "Oi Ocha",
+        "tea_name": "Hot Green Tea",
+        "tea_class": "Caffeinated",
+        "caff_range_mg": "10-20",
+        "hot_cold": "Hot"
+    },
+    {
+        "tea_group": "Infusion",
+        "tea_brand": "Harney & Sons Fine Teas",
+        "brand_flavor": "Peppermint Herbal",
+        "tea_name": "Hot Mint Tea",
+        "tea_class": "Herbal",
+        "caff_range_mg": "0",
+        "hot_cold": "Hot"
+    },
+    {
+        "tea_group": "Black",
+        "tea_brand": "Tazo",
+        "brand_flavor": "Regenerative Organic Chai",
+        "tea_name": "Hot Chai Tea with Milk",
+        "tea_class": "Caffeinated",
+        "caff_range_mg": "40-50",
+        "hot_cold": "Hot"
+    },
+    {
+        "tea_group": "Infusion",
+        "tea_brand": "Organic India",
+        "brand_flavor": "Tulsi Original",
+        "tea_name": "Hot Tulsi Tea",
+        "tea_class": "Herbal",
+        "caff_range_mg": "0",
+        "hot_cold": "Hot"
+    },
+    {
+        "tea_group": "Infusion",
+        "tea_brand": "Pukka Herbs",
+        "brand_flavor": "Peace: Embrace Tranquility",
+        "tea_name": "Hot Peace Tea",
+        "tea_class": "Herbal",
+        "caff_range_mg": "0",
+        "hot_cold": "Hot"
+    }
+]

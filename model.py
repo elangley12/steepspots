@@ -203,7 +203,7 @@ class Teas(db.Model):
         db.String,
         nullable=False
     )
-    caff_range_mg = db.Column( # 90-120mg, 0-30 mg, etc
+    caff_range_mg = db.Column( # 0, 0 - 10, 10 - 20, 20 - 30, etc
         db.String,
         nullable=False
     )
