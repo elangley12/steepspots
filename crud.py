@@ -89,7 +89,26 @@ def delete_user(user_id):
 #TEAS
 
 # MVP
-# TODO create_tea()
+# create_tea()
+def create_tea(tea_group, tea_brand, brand_flavor, tea_name, tea_class, caff_range_mg, hot_cold):
+    """Create and return a new user."""
+
+    new_tea = Teas(
+        tea_group = tea_group,
+        tea_brand = tea_brand,
+        brand_flavor = brand_flavor,
+        tea_name = tea_name,
+        tea_class = tea_class,
+        caff_range_mg = caff_range_mg,
+        hot_cold
+    )
+
+    db.session.add(new_tea)
+    db.session.commit()
+
+    return new_tea
+
+
 # TODO find_tea_by_flavor_profile()
 
 # TODO - Later version CRUD operations:
@@ -139,6 +158,7 @@ def create_flavor_profile(tea_flavor):
 ################################################################################
 #ASSOC TEA FLAVORS
 
+# TODO - create association on teas and flavors in AssocTeaFlavors (see movie ratings lab)
 
 
 ################################################################################
