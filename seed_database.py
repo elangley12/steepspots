@@ -52,6 +52,10 @@ tea_flavor_tags = [
     "Vegetal"
 ]
 
+for tag in tea_flavor_tags:
+    tea_flavor = tag
+    flavor_profiles = crud.create_flavor_profile(tea_flavor)
+
 
 # create some actual teas, ~5ish
     # for each tea, attach flavor profile using AssocTeaFlavors() to make connections
