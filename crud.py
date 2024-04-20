@@ -108,7 +108,17 @@ def delete_user(user_id):
 ################################################################################
 #FLAVOR PROFILES
 
+def create_flavor_profile(tea_flavor):
+    """Create and return flavor profile tags for teas."""
 
+    flavor_options = FlavorProfiles(
+        tea_flavor=tea_flavor
+    )
+
+    db.session.add(flavor_options)
+    db.session.commit()
+
+    return flavor_options
 
 ################################################################################
 #TEA ADD INS
