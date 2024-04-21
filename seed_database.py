@@ -63,7 +63,31 @@ for tag in tea_flavor_tags:
 
 # create test teas
 
-# tea = crud.create_tea()
+teas_in_db = []
+for tea in tea_data:
+    tea_brand, brand_flavor, tea_name, tea_class, caff_range_mg, hot_cold = (
+        tea["tea_brand"],
+        tea["brand_flavor"],
+        tea["tea_name"],
+        tea["tea_class"],
+        tea["caff_range_mg"],
+        tea["hot_cold"]
+    )
+
+    db_tea = crud.create_tea(
+        tea_brand, 
+        brand_flavor, 
+        tea_name, 
+        tea_class, 
+        caff_range_mg, 
+        hot_cold
+    )
+
+    teas_in_db.append(db_tea)
+
+model.db.session.add_all(teas_in_db)
+model.db.session.commit()
+
 
 # TODO - for each tea, attach flavor profile using AssocTeaFlavors() to make connections:
 # make a tea and flavor dictionary pulling from teas.json and tea_flavor_tags options above for each tea

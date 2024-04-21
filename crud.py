@@ -103,8 +103,8 @@ def create_tea(tea_group, tea_brand, brand_flavor, tea_name, tea_class, caff_ran
         hot_cold = hot_cold
     )
 
-    db.session.add(new_tea)
-    db.session.commit()
+    # db.session.add(new_tea)
+    # db.session.commit()
 
     return new_tea
 
