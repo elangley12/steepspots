@@ -1,7 +1,7 @@
 """Script to seed database."""
 
 import os
-# import json
+import json
 # from random import choice, randint
 # from datetime import datetime
 
