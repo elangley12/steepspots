@@ -65,7 +65,8 @@ for tag in tea_flavor_tags:
 
 teas_in_db = []
 for tea in tea_data:
-    tea_brand, brand_flavor, tea_name, tea_class, caff_range_mg, hot_cold = (
+    tea_group, tea_brand, brand_flavor, tea_name, tea_class, caff_range_mg, hot_cold = (
+        tea["tea_group"],
         tea["tea_brand"],
         tea["brand_flavor"],
         tea["tea_name"],
@@ -75,6 +76,7 @@ for tea in tea_data:
     )
 
     db_tea = crud.create_tea(
+        tea_group,
         tea_brand, 
         brand_flavor, 
         tea_name, 
