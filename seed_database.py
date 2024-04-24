@@ -91,6 +91,17 @@ model.db.session.add_all(teas_in_db)
 model.db.session.commit()
 
 
+tea1= model.Teas.query.get(1)
+flavor1 = model.FlavorProfiles.query.get(1)
+tea1.flavors.append(flavor1)
+model.db.session.commit()
+
+# grab tea to add flavors to (store each tea in a variable)
+# grab flavors to add to tea (store each flavor in a variable)
+# use tea.flavor.append(<flavor>) to make associations
+# commit everything
+
+
 # TODO - for each tea, attach flavor profile using AssocTeaFlavors() to make connections:
 # make a tea and flavor dictionary pulling from teas.json and tea_flavor_tags options above for each tea
 # for each tea, add the flavor to crud function and create connection in db for AssocTeaFlavors()
