@@ -1,5 +1,7 @@
 """CRUD operations."""
 
+# will need to bring back in tables as features added, see model.py
+
 from model import(
     db,
     Users,
@@ -8,19 +10,9 @@ from model import(
     Reviews,
     Teas,
     FlavorProfiles,
-    TeaAddIns,
-    TeaIngredients,
-    FoodPairings,
     AssocTeaFlavors,
-    AssocTeaAddIns,
-    AssocTeaIngredients,
-    AssocTeaPairings,
-    TeaStores,
-    TeaSources,
     TeaImages,
-    AssocUserStores,
-    AssocTeaStores,
-    AssocTeaSources,)
+    )
 from werkzeug.security import generate_password_hash, check_password_hash
 
 ################################################################################
