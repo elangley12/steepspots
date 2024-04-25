@@ -44,17 +44,11 @@ def login_user():
 
     # request email and password from form
     email = request.form.get("email")
-    print(f'This is the email {email}')
-
     password = request.form.get("password")
-    print(f'This is the password {password}')
-
     hashed_pass = generate_password_hash(password, method='sha256', salt_length=10)
-    print(f'This is the hashed pass {hashed_pass}')
 
     # find_user_by_email()
     user = crud.find_user_by_email(email)
-    print(f'This is the user {user}')
 
     # if they exist, check password
     if user:

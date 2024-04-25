@@ -50,4 +50,28 @@
 
   <a href="/logout"><h2>Click Here to Logout</h2></a>
 
+  <h2>Tea Flavor Search</h2>
+
+  <!-- This is like my search bar form -->
+  <form id="flavor-search"> 
+
+    <div class="search-group">
+      <label>Choose a tea flavor:
+        <select id="tea-flavor-field" name="tea-flavor" class="form-control">
+          <option>Flavor 1</option>
+          <option>Flavor 2</option>
+        </select>
+
+      </label>
+    </div>
+
+    <div class="search-group">
+      <button type="submit" id="search-form-button" class="btn btn-primary mt-2">Search</button>
+    </div>
+
+  </form>
+
+  <!-- This is like my results div, a place to mount to later -->
+  <div id="tea-results"></div>
+
 {% endblock %}
