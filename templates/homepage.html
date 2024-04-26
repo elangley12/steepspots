@@ -58,10 +58,10 @@
     <div class="search-group">
       <label>Choose a tea flavor:
         <select id="tea-flavor-field" name="tea-flavor" class="form-control">
-          <option>Flavor 1</option>
-          <option>Flavor 2</option>
+          {% for flavor in all_flavors %}
+            <option value={{flavor.tea_flavor}}>{{flavor.tea_flavor}}</option>
+          {% endfor %}
         </select>
-
       </label>
     </div>
 

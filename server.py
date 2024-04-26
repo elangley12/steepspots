@@ -15,7 +15,10 @@ app.jinja_env.undefined = StrictUndefined
 def homepage():
     """View homepage."""
 
-    return render_template('homepage.html')
+    # SqlAlchemy Query our db for Tea Flavor Profiles
+    flavor_profiles = crud.show_tea_flavor_profiles()
+
+    return render_template('homepage.html', all_flavors=flavor_profiles)
 
 
 @app.route("/registration", methods=["POST"])

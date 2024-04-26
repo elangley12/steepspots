@@ -102,6 +102,16 @@ def create_tea(tea_group, tea_brand, brand_flavor, tea_name, tea_class, caff_ran
 
 
 # TODO find_tea_by_flavor_profile()
+def find_tea_by_flavor(flavor):
+    """Return a tea by flavor."""
+    # Teas.flavors contains flavor?
+    return Teas.query.filter(Teas.flavors == flavor).first()
+    # tea = Tea(...)
+    # tea.flavors => list of flavor records
+    #   flavor1 = FlavorProfiles(...)
+    #   flavor2 = FlavorProfiles(...)
+    # tea.flavors => [<Flavor1>, <Flavor2>]
+
 
 # TODO - Later version CRUD operations:
 # delete_tea()
@@ -130,6 +140,17 @@ def create_flavor_profile(tea_flavor):
     db.session.commit()
 
     return flavor_options
+
+
+def show_tea_flavor_profiles():
+    """Return all tea flavor profiles."""
+
+    # query to get all flavor profiles from database
+    return FlavorProfiles.query.all()
+
+
+# new function
+    # query to filter teas by selected flavor profile
 
 
 ################################################################################
