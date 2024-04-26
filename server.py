@@ -19,6 +19,8 @@ def homepage():
     flavor_profiles = crud.show_tea_flavor_profiles()
 
     return render_template('homepage.html', all_flavors=flavor_profiles)
+    # The all_flavors variable is what will get referenced by Jinja when 
+    # displaying flavor profiles in the search drop down
 
 
 @app.route("/registration", methods=["POST"])
