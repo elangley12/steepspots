@@ -136,7 +136,9 @@ def show_tea_flavor_profiles():
 
 # new function
     # query to filter teas by selected flavor profile
+def find_flavor_by_flavor_name(flavor_name):
 
+    return FlavorProfiles.query.filter_by(tea_flavor=flavor_name).first()
 
 
 ################################################################################

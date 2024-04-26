@@ -1,6 +1,6 @@
 """Server for SteepSpots app."""
 
-from flask import Flask, render_template, request, flash, session, redirect
+from flask import Flask, render_template, request, flash, session, redirect, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from model import connect_to_db, db
 import crud
@@ -94,6 +94,31 @@ def show_user_profile():
     """Render user's profile."""
 
     return render_template("userprofile.html")
+
+
+@app.route('/tea-results.json', methods=["POST"])
+def show_tea_results():
+    """Return JSON for tea results."""
+
+    flavor_name = request.json.get('tea_flavor')    
+    flavor_instance = crud.find_flavor_by_flavor_name(flavor_name)
+    
+
+    results = []
+    for tea in flavor_instance.teas:
+        tea_dictionary = {
+            "tea_group": tea.tea_group,
+            "tea_brand": tea.tea_brand,
+            "brand_flavor": tea.brand_flavor,
+            "tea_name": tea.tea_name,
+            "tea_class": tea.tea_class,
+            "caff_range_mg": tea.caff_range_mg
+        }
+
+        results.append(tea_dictionary)
+
+    
+    return jsonify(results)
 
 
 # route to receive flavor selection from js
