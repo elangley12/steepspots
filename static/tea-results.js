@@ -18,10 +18,19 @@ function showTeaResults(evt) {
   })
     .then((response) => response.json())
     .then((res) => { // this `res` is the jsonified `results` from the server
-        teaResults = document.querySelector('#tea-results')
-        // Need to make a function above that checks for existing children, 
-        // erase them, display the new results using document.querySelector and 
-        // insertAdjacent instead (see links from Trew!!)
+        let teaResults = document.querySelector('#tea-results');
+        let results_list = "";
+        console.log(res);
+
+        const result_headers = `<tr><th>Group</th><th>Name</th></tr>`
+        results_list += result_headers
+
+        for (const tea_item of res) {
+          const result = `<tr><td>${tea_item['tea_group']}</td> <td>${tea_item['tea_name']}</td></tr>`;
+          results_list += result;
+        }
+
+        teaResults.innerHTML = results_list;
     });
 
 }
