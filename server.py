@@ -55,7 +55,7 @@ def register_user():
 
 # TODO - need a route to render log in page
 @app.route("/sign-in")
-def render_registration():
+def render_login():
     """Render Log In page."""
 
     return render_template('sign-in.html')
