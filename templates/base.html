@@ -4,19 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>
-      {% block title %}{% endblock %}
+      {% block title %} PLACEHOLDER {% endblock %}
     </title>
 
     {% block head %}{% endblock %}
   </head>
   <body>
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="/">Back to Home</a></li>
+      <li><a href="/teas">View all teas</a></li>
+      <li><a href="/create-account">Create New Account</a></li>
+    </ul>
+
     {% for msg in get_flashed_messages() %}
       <p class="flash-msg">
         {{ msg }}
       </p>
     {% endfor %}
     
-    {% block body %}{% endblock %}
+    {% block body %} PLACEHOLDER {% endblock %}
 
     {% block after_body %}{% endblock %}
   </body>

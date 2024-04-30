@@ -4,12 +4,6 @@
 {% block body %}
   <h1>Welcome to SteepSpots!</h1>
 
-  <h2>Navigation</h2>
-  <ul>
-    <li><a href="/teas">View all teas</a></li>
-    <li><a href="/users">View all users</a></li>
-  </ul>
-
   <h2>Log In</h2>
   <form action="/login" method="POST">
     <p>
@@ -29,6 +23,34 @@
 
   <h2>Tea Flavor Search</h2>
 
+  <!-- tip: check out card component from bootstrap -->
+  <!-- TODO - add class to table headers for quick styling later, also move this to JS probably-->
+  <div>
+    <div class="all-results">
+      <table id="all-tea-results">
+        <tr>
+          <th>Tea Group</th>
+          <th>Tea Type</th>
+          <th>Caffeine Range (mg)</th>
+          <th>Brand Name</th>
+          <th>Brand Flavor Name</th>
+          <th>Tea Name</th>
+          <th>Add to Favorites</th>
+        </tr>
+      {% for tea in all_teas %}
+        <tr>
+          <td>{{ tea.tea_group }}</td>
+          <td>{{ tea.tea_class }}</td>
+          <td>{{ tea.caff_range_mg }}</td>
+          <td>{{ tea.tea_brand }}</td>
+          <td>{{ tea.brand_flavor }}</td>
+          <td>{{ tea.tea_name }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    </div>
+  </div>
+
   <!-- This is like my search bar form -->
   <form id="flavor-search"> 
 
@@ -41,6 +63,7 @@
         </select>
       </label>
     </div>
+
 
     <div class="search-group">
       <button type="submit" id="search-form-button" class="btn btn-primary mt-2">Search</button>

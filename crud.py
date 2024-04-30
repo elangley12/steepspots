@@ -86,7 +86,12 @@ def create_tea(tea_group, tea_brand, brand_flavor, tea_name, tea_class, caff_ran
     return new_tea
 
 
-# TODO find_tea_by_flavor_profile()
+def show_all_teas():
+    """Return all teas in model."""
+
+    return Teas.query.all()
+
+
 def find_tea_by_flavor(flavor):
     """Return a tea by flavor."""
     # Teas.flavors contains flavor?
