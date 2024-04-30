@@ -94,6 +94,7 @@ def show_user_profile():
     """Render user's profile."""
 
     # display favorited teas by creating a crud op to find user's favorite teas
+    # what about a back button to get to results after favoriting?
 
     return render_template("userprofile.html")
 
