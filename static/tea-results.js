@@ -20,14 +20,20 @@ function showTeaResults(evt) {
     .then((res) => { // this `res` is the jsonified `results` from the server
         let teaResults = document.querySelector('#tea-results');
         let results_list = "";
-        console.log(res);
+        // console.log(res);
 
         const result_headers = `<tr><th>Group</th><th>Name</th></tr>`
         results_list += result_headers
 
         for (const tea_item of res) {
-          const result = `<tr><td>${tea_item['tea_group']}</td> <td>${tea_item['tea_name']}</td></tr>`;
+          results_list += `<tr>`;
+          const result = `<td>${tea_item['tea_group']}</td> <td>${tea_item['tea_name']}</td>`;
           results_list += result;
+          // make a variable that will store an html button or link
+          const add_to_favorites = `<td><a href="/tea-profile/${tea_item['tea_id']}"></a></td>`
+            // link would call to a Flask route to add to user favorites
+          // concatenate the variable above to results_list
+          results_list += `</tr>`;
         }
 
         teaResults.innerHTML = results_list;

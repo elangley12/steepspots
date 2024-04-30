@@ -156,6 +156,24 @@ def associate_tea_to_flavors(tea, flavors):
 
 
 ################################################################################
+#FAVORITES
+
+# create favorite tea (create row in Favorites())
+def create_favorite_tea(user_id, tea_id):
+    """Create and return a tea favorited by a user."""
+
+    favorite_tea = Favorites(
+        user_id = user_id,
+        tea_id = tea_id
+    )
+
+    db.session.add(favorite_tea)
+    db.session.commit()
+
+    return favorite_tea
+
+
+
 
 
 if __name__ == '__main__':

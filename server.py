@@ -107,6 +107,7 @@ def show_tea_results():
     results = []
     for tea in flavor_instance.teas:
         tea_dictionary = {
+            "tea_id": tea.tea_id,
             "tea_group": tea.tea_group,
             "tea_brand": tea.tea_brand,
             "brand_flavor": tea.brand_flavor,
@@ -121,18 +122,11 @@ def show_tea_results():
     return jsonify(results)
 
 
-# route to receive flavor selection from js
-    # run crud to get all teas from db with selected flavor profile (list of objects)
-    # set result list
-    # (what results to show on results page?) for loop through each list of objects
-        # tea1 > name, brandname > add to results list
-        # return result (list of key value pairs that I care about)
-    
-    
-    # (js) for each tea result, make an html element and add to div
+@app.route('/tea-profile/<tea_id>')
+def add_favorite_tea(tea_id):
+    """Add tea to user profile."""
 
-
-# plan B: if ajax is not working, consider jinja templating instead (new page)
+    # need crud operations to add tea to favorites
 
 
 
