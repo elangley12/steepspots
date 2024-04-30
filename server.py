@@ -23,6 +23,13 @@ def homepage():
     # displaying flavor profiles in the search drop down
 
 
+@app.route("/create-account")
+def render_registration():
+    """Render Create Account page."""
+
+    return render_template('userregistration.html')
+
+
 @app.route("/registration", methods=["POST"])
 def register_user():
     """Create a new user."""

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}SteepSpots | Create Account{% endblock %}
+<!-- for user profile, can use session['user'] for name -->
+
+{% block body %}
+
+<h2>Create a SteepSpots Account</h2>
+  <form action="/registration" method="POST">
+    <p>
+        First Name <input required type="text" name="fname">
+    </p>
+
+    <p>
+        Last Name <input required type="text" name="lname">
+    </p>
+    
+    <p>
+        Email <input required type="text" name="email">
+    </p>
+
+    <p>
+        Password <input required type="password" name="password">
+    </p>
+
+    <p>
+      <input type="submit">
+    </p>
+  </form>
+
+{% endblock %}
