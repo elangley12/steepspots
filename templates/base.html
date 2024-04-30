@@ -10,11 +10,14 @@
     {% block head %}{% endblock %}
   </head>
   <body>
+    <h1>SteepSpots</h1>
+
     <h2>Navigation</h2>
     <ul>
-      <li><a href="/">Back to Home</a></li>
-      <li><a href="/teas">View all teas</a></li>
-      <li><a href="/create-account">Create New Account</a></li>
+      <li><a href="/"> SteepSpots Home </a></li>
+      <li><a href="/teas"> Login </a></li>
+      <li><a href="/create-account"> Create New Account </a></li>
+      <!-- <li><a href="/teas">View all teas</a></li> -->
     </ul>
 
     {% for msg in get_flashed_messages() %}
