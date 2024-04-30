@@ -54,6 +54,12 @@ def register_user():
 
 
 # TODO - need a route to render log in page
+@app.route("/sign-in")
+def render_registration():
+    """Render Log In page."""
+
+    return render_template('sign-in.html')
+
 
 @app.route("/login", methods=["POST"])
 def login_user():
