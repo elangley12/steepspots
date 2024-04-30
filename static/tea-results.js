@@ -30,9 +30,10 @@ function showTeaResults(evt) {
           const result = `<td>${tea_item['tea_group']}</td> <td>${tea_item['tea_name']}</td>`;
           results_list += result;
           // make a variable that will store an html button or link
-          const add_to_favorites = `<td><a href="/tea-profile/${tea_item['tea_id']}"></a></td>`
+          const add_to_favorites = `<td><a href="/tea-profile/${tea_item['tea_id']}">Click to Add to Favorites</a></td>`
             // link would call to a Flask route to add to user favorites
           // concatenate the variable above to results_list
+          results_list += add_to_favorites;
           results_list += `</tr>`;
         }
 

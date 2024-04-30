@@ -61,7 +61,7 @@ def login_user():
         if check_password_hash(user.password, password):
            # login by adding to session
            # redirect to user profile
-            session["user"] = user.email
+            session["user"] = user.user_id
             flash("Login successful!")
             return redirect("/user_profile")
 
@@ -92,6 +92,8 @@ def logout_user():
 @app.route("/user_profile")
 def show_user_profile():
     """Render user's profile."""
+
+    # display favorited teas by creating a crud op to find user's favorite teas
 
     return render_template("userprofile.html")
 
@@ -126,7 +128,13 @@ def show_tea_results():
 def add_favorite_tea(tea_id):
     """Add tea to user profile."""
 
-    # need crud operations to add tea to favorites
+    user_id = session["user"]
+
+    favorite_tea = crud.create_favorite_tea(user_id, tea_id)
+
+    return redirect("/user_profile")
+
+
 
 
 
