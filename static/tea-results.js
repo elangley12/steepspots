@@ -1,5 +1,10 @@
 'use strict';
 
+// maybe I can use an if statement to start with everything showing, then use an
+// event listener to filter the tea results after the form is submitted
+// also add a flavor column for thoroughness
+
+
 function showTeaResults(evt) {
     evt.preventDefault();
   

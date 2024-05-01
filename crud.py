@@ -177,6 +177,14 @@ def create_favorite_tea(user_id, tea_id):
 
     return favorite_tea
 
+def find_user_favorite_teas(user_id):
+    """Query user model and return their favorite teas."""
+
+    # TODO
+    # for a given user id from the session, return all of their Users.favorites
+    # teas from the model. How do I filter on two fields again?
+
+    return Users.query.filter()
 
 
 

@@ -3,14 +3,14 @@
 
 {% block body %}
 
-  <h2>Tea Flavor Search</h2>
+  <h2>Spot New Teas by Flavor!</h2>
 
   <!-- tip: check out card component from bootstrap -->
   <!-- TODO - add class to table headers for quick styling later, also move this to JS probably-->
   <div>
     <div class="all-results">
       <table id="all-tea-results">
-        <tr>
+        <tr align="left">
           <th>Tea Group</th>
           <th>Tea Type</th>
           <th>Caffeine Range (mg)</th>
@@ -53,7 +53,6 @@
 
   </form>
 
-  <!-- This is like my results div, a place to mount to later -->
   <table id="tea-results"></table>
 
   <script src="/static/tea-results.js"></script>
