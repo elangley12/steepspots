@@ -43,6 +43,12 @@ def find_user_by_email(email):
     return Users.query.filter(Users.email == email).first()
 
 
+def find_user_by_id(user_id):
+    """Return a user by ID."""
+
+    return Users.query.filter(Users.user_id == user_id).first()
+
+
 # delete_user()
 def delete_user(user_id):
     """Delete a user from the database."""
@@ -177,14 +183,6 @@ def create_favorite_tea(user_id, tea_id):
 
     return favorite_tea
 
-def find_user_favorite_teas(user_id):
-    """Query user model and return their favorite teas."""
-
-    # TODO
-    # for a given user id from the session, return all of their Users.favorites
-    # teas from the model. How do I filter on two fields again?
-
-    return Users.query.filter()
 
 
 

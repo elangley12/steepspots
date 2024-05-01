@@ -4,12 +4,30 @@
 {% block body %}
 
   <h2>Spot New Teas by Flavor!</h2>
+  
+  <!-- This is like my search bar form -->
+  <form id="flavor-search"> 
+    <div class="search-group">
+      <label>Choose a tea flavor:
+        <select id="tea-flavor-field" name="tea-flavor" class="form-control">
+          {% for flavor in all_flavors %}
+            <option value={{flavor.tea_flavor}}>{{flavor.tea_flavor}}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
 
+
+    <div class="search-group">
+      <button type="submit" id="search-form-button" class="btn btn-primary mt-2">Search</button>
+    </div>
+  </form>
+  
   <!-- tip: check out card component from bootstrap -->
   <!-- TODO - add class to table headers for quick styling later, also move this to JS probably-->
   <div>
     <div class="all-results">
-      <table id="all-tea-results">
+      <table id="tea-results">
         <tr align="left">
           <th>Tea Group</th>
           <th>Tea Type</th>
@@ -33,27 +51,6 @@
     </div>
   </div>
 
-  <!-- This is like my search bar form -->
-  <form id="flavor-search"> 
-
-    <div class="search-group">
-      <label>Choose a tea flavor:
-        <select id="tea-flavor-field" name="tea-flavor" class="form-control">
-          {% for flavor in all_flavors %}
-            <option value={{flavor.tea_flavor}}>{{flavor.tea_flavor}}</option>
-          {% endfor %}
-        </select>
-      </label>
-    </div>
-
-
-    <div class="search-group">
-      <button type="submit" id="search-form-button" class="btn btn-primary mt-2">Search</button>
-    </div>
-
-  </form>
-
-  <table id="tea-results"></table>
 
   <script src="/static/tea-results.js"></script>
 

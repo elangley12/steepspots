@@ -53,7 +53,6 @@ def register_user():
     return redirect("/")
 
 
-# TODO - need a route to render log in page
 @app.route("/sign-in")
 def render_login():
     """Render Log In page."""
@@ -111,10 +110,11 @@ def logout_user():
 def show_user_profile():
     """Render user's profile."""
 
-    # TODO - display favorited teas by creating a crud op to find user's favorite teas
-    # what about a back button to get to results after favoriting?
+    user_id = session['user']
+    user = crud.find_user_by_id(user_id)
+    user_favorites = user.favorites
 
-    return render_template("userprofile.html")
+    return render_template("userprofile.html", user_favorites=user_favorites)
 
 
 @app.route('/tea-results.json', methods=["POST"])
