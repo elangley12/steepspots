@@ -9,7 +9,7 @@ function showTeaResults(evt) {
       tea_flavor: document.querySelector('#tea-flavor-field').value,
     };
     console.log(formInputs)
-    // need to write route for this (see server.py for notes). put jsonified result from server here
+    
   fetch('/tea-results.json', {
     method: 'POST',
     body: JSON.stringify(formInputs),
