@@ -6,7 +6,6 @@
     <title>
       {% block title %} PLACEHOLDER {% endblock %}
     </title>
-
     {% block head %}{% endblock %}
   </head>
   <body>
@@ -25,7 +24,6 @@
       <li><a href="/sign-in"> Login </a></li>
       <li><a href="/logout"> Logout </a></li>
       <li><a href="/create-account"> Create New Account </a></li>
-      <!-- <li><a href="/teas">View all teas</a></li> -->
     </ul>
 
     {% for msg in get_flashed_messages() %}

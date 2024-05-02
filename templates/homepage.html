@@ -41,7 +41,15 @@
           <td>{{ tea.tea_brand }}</td>
           <td>{{ tea.brand_flavor }}</td>
           <td>{{ tea.tea_name }}</td>
-          <td><a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a></td>
+          <!-- <td><a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a></td> -->
+          <td>
+            <div class="container">
+              <div class="toggle" onclick="toggle()">
+                  <div class="circle"></div>
+              </div>
+              <span class="text">Spot Tea</span>
+            </div>
+          </td>
         </tr>
       {% endfor %}
     </table>
