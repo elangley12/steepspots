@@ -1,8 +1,33 @@
 {% extends 'base.html' %}
-{% block title %} SteepSpots | Profile Page {% endblock %}
+{% block title %} SteepSpots | Profile {% endblock %}
 
 {% block body %}
 
-  <a href="/logout"><h2>Click Here to Logout</h2></a>
+<div>
+  <div class="user-results">
+    <table id="user-tea-results">
+      <tr align="left">
+        <th>Tea Group</th>
+        <th>Tea Type</th>
+        <th>Caffeine Range (mg)</th>
+        <th>Brand Name</th>
+        <th>Brand Flavor Name</th>
+        <th>Tea Name</th>
+        <th>Add to Favorites</th>
+      </tr>
+    {% for tea in user_favorites %}
+      <tr>
+        <td>{{ tea.tea_group }}</td>
+        <td>{{ tea.tea_class }}</td>
+        <td>{{ tea.caff_range_mg }}</td>
+        <td>{{ tea.tea_brand }}</td>
+        <td>{{ tea.brand_flavor }}</td>
+        <td>{{ tea.tea_name }}</td>
+        <td><a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+  </div>
+</div>
 
 {% endblock %}
