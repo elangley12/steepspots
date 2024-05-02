@@ -12,6 +12,12 @@
   <body>
     <h1>SteepSpots</h1>
 
+    <p>
+    {% if 'user' in session %}
+      Current user: {{ session['user'] }}
+    {% endif %}
+    </p>
+
     <h2>Navigation</h2>
     <ul>
       <li><a href="/"> Home </a></li>

@@ -15,15 +15,16 @@
         <th>Tea Name</th>
         <th>Add to Favorites</th>
       </tr>
-    {% for tea in user_favorites %}
+    {% for favorite in user_favorites %}
+      <!-- <Favorite>.tea.<column> -->
       <tr>
-        <td>{{ tea.tea_group }}</td>
-        <td>{{ tea.tea_class }}</td>
-        <td>{{ tea.caff_range_mg }}</td>
-        <td>{{ tea.tea_brand }}</td>
-        <td>{{ tea.brand_flavor }}</td>
-        <td>{{ tea.tea_name }}</td>
-        <td><a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a></td>
+        <td>{{ favorite.tea.tea_group }}</td>
+        <td>{{ favorite.tea.tea_class }}</td>
+        <td>{{ favorite.tea.caff_range_mg }}</td>
+        <td>{{ favorite.tea.tea_brand }}</td>
+        <td>{{ favorite.tea.brand_flavor }}</td>
+        <td>{{ favorite.tea.tea_name }}</td>
+        <td><a href="/tea-profile/{{ favorite.tea.tea_id }}">Spot Tea</a></td>
       </tr>
     {% endfor %}
   </table>

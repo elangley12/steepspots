@@ -113,7 +113,12 @@ def show_user_profile():
     user_id = session['user']
     user = crud.find_user_by_id(user_id)
     user_favorites = user.favorites
-    print(user_favorites)
+    # [<Favorite>, <Favorite>]
+    # favorite.tea => <Tea> => caffeine, tea_group
+    # favorite.user => <User>.favorites
+
+
+    # print(user_favorites)
 
     return render_template("userprofile.html", user_favorites=user_favorites)
 
