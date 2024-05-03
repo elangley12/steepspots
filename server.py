@@ -171,6 +171,8 @@ def delete_favorite_tea(tea_id):
     # call crud.remove_favorite_tea() => get tea_id from userprofile.html 
     remove_favorite_tea = crud.remove_favorite_tea(user_id, tea_id)
 
+    
+
     # redirect to user profile
     return redirect("/user_profile")
 

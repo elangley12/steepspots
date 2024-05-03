@@ -178,18 +178,35 @@ def create_favorite_tea(user_id, tea_id):
         tea_id = tea_id
     )
 
-    db.session.add(favorite_tea)
-    db.session.commit()
+    # if I change tea_id to the primary key on Favorites(), how will errors be 
+    # handled by SQLAlchemy?
+    fav_query_result = Favorites.query.filter_by(user_id=user_id, tea_id=tea_id).count()
+
+    if fav_query_result >= 1:
+        print("Already a favorite tea!")
+    else:
+        print("New tea favorited!")
+        db.session.add(favorite_tea)
+        db.session.commit()
 
     return favorite_tea
+
+
 
 def remove_favorite_tea(user_id, tea_id):
     """Remove a tea favorited by the user."""
 
     # need to know what tea_id the user is trying to delete
-    # query for that tea_id in Favorites 
+    # query for that tea_id in Favorites
 
-    tea_to_delete = Favorites.query.filter(user_id==user_id, tea_id==tea_id)
+    tea_to_delete = Favorites.query.filter_by(user_id=user_id, tea_id=tea_id)
+    print(f"TEA_TO_DELETE is:",tea_to_delete)
+
+    # fav_id = tea_to_delete.user_fav_id
+    # print(f"USER_FAV_ID is: {fav_id}")
+
+    # what about deleting by user_fav_id? 
+    # I think the duplicates are confusing SQLAlchemy
 
     db.session.delete(tea_to_delete)
     db.session.commit()
