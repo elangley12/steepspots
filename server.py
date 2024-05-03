@@ -161,6 +161,25 @@ def add_favorite_tea(tea_id):
 
 
 
+@app.route('/tea-removal/<tea_id>')
+def delete_favorite_tea(tea_id):
+    """Delete tea from user profile."""
+
+    # grab user_id from session
+    user_id = session["user"]
+
+    # call crud.remove_favorite_tea() => get tea_id from userprofile.html 
+    remove_favorite_tea = crud.remove_favorite_tea(user_id, tea_id)
+
+    # redirect to user profile
+    return redirect("/user_profile")
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":

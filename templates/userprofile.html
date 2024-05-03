@@ -13,7 +13,7 @@
         <th>Brand Name</th>
         <th>Brand Flavor Name</th>
         <th>Tea Name</th>
-        <th>Add to Favorites</th>
+        <th>Remove Favorite</th>
       </tr>
     {% for favorite in user_favorites %}
       <!-- <Favorite>.tea.<column> -->
@@ -24,7 +24,7 @@
         <td>{{ favorite.tea.tea_brand }}</td>
         <td>{{ favorite.tea.brand_flavor }}</td>
         <td>{{ favorite.tea.tea_name }}</td>
-        <td><a href="/tea-profile/{{ favorite.tea.tea_id }}">Spot Tea</a></td>
+        <td><a href="/tea-removal/{{ favorite.tea.tea_id }}">Unspot Tea</a></td>
       </tr>
     {% endfor %}
   </table>

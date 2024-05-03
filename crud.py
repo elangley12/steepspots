@@ -183,6 +183,19 @@ def create_favorite_tea(user_id, tea_id):
 
     return favorite_tea
 
+def remove_favorite_tea(user_id, tea_id):
+    """Remove a tea favorited by the user."""
+
+    # need to know what tea_id the user is trying to delete
+    # query for that tea_id in Favorites 
+
+    tea_to_delete = Favorites.query.filter(user_id==user_id, tea_id==tea_id)
+
+    db.session.delete(tea_to_delete)
+    db.session.commit()
+
+    print(f"Tea {tea_id} removed from Favorites()")
+
 
 
 
