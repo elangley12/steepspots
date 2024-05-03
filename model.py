@@ -22,7 +22,8 @@ class Users(db.Model):
         db.Integer,
         primary_key=True,
         autoincrement=True,
-        nullable=False
+        nullable=False,
+        unique=True
     )
     fname = db.Column(
         db.String,
@@ -66,7 +67,8 @@ class Favorites(db.Model):
         db.Integer,
         primary_key=True,
         autoincrement=True,
-        nullable=False
+        nullable=False,
+        unique=True
     )
     user_id = db.Column(
         db.Integer,
@@ -181,7 +183,8 @@ class Teas(db.Model):
         db.Integer,
         primary_key=True,
         autoincrement=True,
-        nullable=False
+        nullable=False,
+        unique=True
     )
     tea_group = db.Column( # green, black, oolong, etc
         db.String,
