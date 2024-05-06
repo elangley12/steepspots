@@ -81,11 +81,15 @@ for parent_dict in api_results:
                 "tea_img": parent_dict['types'][tea]['image'],
                 "tea_origin": parent_dict['types'][tea]['origin'],
                 "caff_level": parent_dict['types'][tea]['caffeineLevel'],
-                "tea_info": parent_dict['types'][tea]['decription'],
                 "tea_color": parent_dict['types'][tea]['colorDescription'],
                 "tea_flavor_notes": parent_dict['types'][tea]['tasteDescription'],
                 # "web_sources": parent_dict['types'][tea]['sources']  =>  # because this is a list, it would actual be better to make a new table for URLs
             }
+
+            if 'decription' in parent_dict['types'][tea].keys():
+                individual_tea_dict["tea_info"] = parent_dict['types'][tea]['decription']
+            elif 'description' in parent_dict['types'][tea].keys():
+                individual_tea_dict["tea_info"] = parent_dict['types'][tea]['description']
 
             # take this information and pass it to the crud.create_tea()
             db_tea = crud.create_tea(individual_tea_dict)
