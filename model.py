@@ -593,44 +593,44 @@ class AssocTeaFlavors(db.Model):
 #         return f"<TeaSources source_id= {self.source_id} tea_id= {self.tea_id}>"
 
 
-class TeaImages(db.Model):
-    """Data model for tea images."""
+# class TeaImages(db.Model):
+#     """Data model for tea images."""
 
-    __tablename__ = 'teaImages'
+#     __tablename__ = 'teaImages'
 
-    image_id = db.Column(
-        db.Integer,
-        primary_key=True,
-        autoincrement=True,
-        nullable=False
-    )
-    tea_id = db.Column(
-        db.Integer,
-        db.ForeignKey('teas.tea_id'),
-        nullable=False
-    )
-    user_id = db.Column(
-        db.Integer,
-        db.ForeignKey('users.user_id'),
-        nullable=False
-    )
-    # TODO - correct image class for SQLAlchemy:
-    # tea_image = db.Column(
-    #     db.Image,
-    #     nullable=False
-    # )
-    date_added = db.Column(
-        db.DateTime,
-        default=datetime.now()
-    )
+#     image_id = db.Column(
+#         db.Integer,
+#         primary_key=True,
+#         autoincrement=True,
+#         nullable=False
+#     )
+#     tea_id = db.Column(
+#         db.Integer,
+#         db.ForeignKey('teas.tea_id'),
+#         nullable=False
+#     )
+#     user_id = db.Column(
+#         db.Integer,
+#         db.ForeignKey('users.user_id'),
+#         nullable=False
+#     )
+#     # TODO - correct image class for SQLAlchemy:
+#     # tea_image = db.Column(
+#     #     db.Image,
+#     #     nullable=False
+#     # )
+#     date_added = db.Column(
+#         db.DateTime,
+#         default=datetime.now()
+#     )
 
-    user = db.relationship('Users', back_populates='tea_images')
-    tea = db.relationship('Teas', back_populates='tea_images')
+#     user = db.relationship('Users', back_populates='tea_images')
+#     tea = db.relationship('Teas', back_populates='tea_images')
 
-    def __repr__(self):
-        """Show info about tea images."""
+#     def __repr__(self):
+#         """Show info about tea images."""
 
-        return f"<TeaImages image_id= {self.image_id} tea_id= {self.tea_id} user_id= {self.user_id}>"
+#         return f"<TeaImages image_id= {self.image_id} tea_id= {self.tea_id} user_id= {self.user_id}>"
 
 
 # class AssocUserStores(db.Model):

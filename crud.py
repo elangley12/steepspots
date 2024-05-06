@@ -73,17 +73,19 @@ def delete_user(user_id):
 
 # MVP
 # create_tea()
-def create_tea(tea_group, tea_brand, brand_flavor, tea_name, tea_class, caff_range_mg, hot_cold):
+def create_tea(tea_dict):
     """Create and return a new tea."""
 
     new_tea = Teas(
-        tea_group = tea_group,
-        tea_brand = tea_brand,
-        brand_flavor = brand_flavor,
-        tea_name = tea_name,
-        tea_class = tea_class,
-        caff_range_mg = caff_range_mg,
-        hot_cold = hot_cold
+        tea_group = tea_dict['tea_group'],
+        tea_name = tea_dict['tea_name'],
+        caff_range_mg = tea_dict['caff_range_mg'],
+        tea_img = tea_dict['tea_img'],
+        tea_origin = tea_dict['tea_origin'],
+        caff_level = tea_dict['caff_level'],
+        tea_info = tea_dict['tea_info'],
+        tea_color = tea_dict['tea_color'],
+        tea_flavor_notes = tea_dict['tea_flavor_notes']
     )
 
     # db.session.add(new_tea)
