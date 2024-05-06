@@ -2,6 +2,7 @@
 
 import os
 import json
+import requests
 # from random import choice, randint
 # from datetime import datetime
 
@@ -62,6 +63,8 @@ for tag in tea_flavor_tags:
 
 
 # create test teas
+
+res = requests.get('https://boonakitea.cyclic.app/api/teas')
 
 teas_in_db = []
 for tea in tea_data:

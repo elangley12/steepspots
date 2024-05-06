@@ -199,7 +199,7 @@ def remove_favorite_tea(user_id, tea_id):
     # need to know what tea_id the user is trying to delete
     # query for that tea_id in Favorites
 
-    tea_to_delete = Favorites.query.filter_by(user_id=user_id, tea_id=tea_id)
+    tea_to_delete = Favorites.query.filter_by(user_id=user_id, tea_id=tea_id).first()
     print(f"TEA_TO_DELETE is:",tea_to_delete)
 
     # fav_id = tea_to_delete.user_fav_id
@@ -211,7 +211,7 @@ def remove_favorite_tea(user_id, tea_id):
     db.session.delete(tea_to_delete)
     db.session.commit()
 
-    print(f"Tea {tea_id} removed from Favorites()")
+    print(f"*********Tea {tea_id} removed from User {user_id} Favorites()")
 
 
 
