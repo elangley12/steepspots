@@ -190,34 +190,58 @@ class Teas(db.Model):
         db.String,
         nullable=False
     )
-    tea_brand = db.Column( # lipton, etc
-        db.String(75),
-        nullable=False
-    )
-    brand_flavor = db.Column( # none, sleepytime, peace, etc
-        db.String(75),
-        nullable=False
-    )
     tea_name = db.Column( # milk tea with boba, iced tea with lemon
         db.String(50),
-        nullable=False
-    )
-    tea_class = db.Column( # herbal, decaf, caffeinated, etc
-        db.String,
         nullable=False
     )
     caff_range_mg = db.Column( # 0, 0 - 10, 10 - 20, 20 - 30, etc
         db.String,
         nullable=False
     )
-    hot_cold = db.Column(
-        db.String(4),
-        nullable=False
+    tea_img = db.Column(
+        db.String
     )
+    tea_origin = db.Column(
+        db.String
+    )
+    caff_level = db.Column(
+        db.String
+    )
+    tea_info = db.Column(
+        db.String
+    )
+    tea_color = db.Column(
+        db.String
+    )
+    tea_flavor_notes = db.Column(
+        db.String
+    )
+    # because this is a list, it would actual be better to make a new table for URLs
+    # web_sources = db.Column(
+    #     db.String,
+    # )
     date_added = db.Column(
         db.DateTime,
         default=datetime.now()
     )
+    
+    # tea_brand = db.Column( # lipton, etc
+    #     db.String(75),
+    #     nullable=False
+    # )
+    # brand_flavor = db.Column( # none, sleepytime, peace, etc
+    #     db.String(75),
+    #     nullable=False
+    # )
+    # tea_class = db.Column( # herbal, decaf, caffeinated, etc
+    #     db.String,
+    #     nullable=False
+    # )
+    # hot_cold = db.Column(
+    #     db.String(4),
+    #     nullable=False
+    # )
+    
 
     # user = db.relationship() association is found through UserFavorites()
     # stores = db.relationship('AssocTeaStores', back_populates='teas')
