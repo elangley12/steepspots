@@ -51,7 +51,7 @@ class Users(db.Model):
     ratings = db.relationship('Ratings', back_populates='user')
     reviews = db.relationship('Reviews', back_populates='user')
     # tried_stores = db.relationship('AssocUserStores', back_populates='users')
-    tea_images = db.relationship('TeaImages', back_populates='user')
+    # tea_images = db.relationship('TeaImages', back_populates='user')
 
     def __repr__(self):
         """Show information on User."""
@@ -251,7 +251,7 @@ class Teas(db.Model):
     # ingredients = db.relationship('AssocTeaIngredients', back_populates='teas')
     # food_pairings = db.relationship('AssocTeaPairings', back_populates='teas')
     saved_by = db.relationship('Favorites', back_populates='tea')
-    tea_images = db.relationship('TeaImages', back_populates='tea')
+    # tea_images = db.relationship('TeaImages', back_populates='tea')
     ratings = db.relationship('Ratings', back_populates='tea')
     reviews = db.relationship('Reviews', back_populates='tea')
 

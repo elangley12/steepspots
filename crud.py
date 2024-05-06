@@ -10,8 +10,7 @@ from model import(
     Reviews,
     Teas,
     FlavorProfiles,
-    AssocTeaFlavors,
-    TeaImages,
+    AssocTeaFlavors
     )
 from werkzeug.security import generate_password_hash, check_password_hash
 

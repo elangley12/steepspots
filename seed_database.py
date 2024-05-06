@@ -17,10 +17,6 @@ model.connect_to_db(server.app)
 model.db.create_all()
 
 
-# Load user data from JSON file:
-with open('data/teas.json') as f:
-    tea_data = json.loads(f.read())
-
 
 
 # create test users
