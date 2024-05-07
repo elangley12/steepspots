@@ -11,7 +11,49 @@
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <h1>SteepSpots</h1>
+    
+    <nav class="navbar sticky-top navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"> 
+          <!-- <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
+          SteepSpots
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- TODO - How to change the alignment of everything below to be right aligned? -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul alignment="right" class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/user_profile"> Profile </a></li>
+                <li><a class="dropdown-item" href="/sign-in"> Login </a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/logout"> Logout </a></li>
+              </ul>
+            <!-- </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li> -->
+          </ul>
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+    
+    <!-- <h1>SteepSpots</h1> -->
 
     <p>
     {% if 'user' in session %}
@@ -20,12 +62,12 @@
     </p>
 
     <nav>
-      <h2>Navigation</h2>
+      <!-- <h2>Navigation</h2> -->
       <ul>
-        <li><a href="/"> Home </a></li>
-        <li><a href="/user_profile"> Profile </a></li>
-        <li><a href="/sign-in"> Login </a></li>
-        <li><a href="/logout"> Logout </a></li>
+        <!-- <li><a href="/"> Home </a></li> -->
+        <!-- <li><a href="/user_profile"> Profile </a></li> -->
+        <!-- <li><a href="/sign-in"> Login </a></li> -->
+        <!-- <li><a href="/logout"> Logout </a></li> -->
         <li><a href="/create-account"> Create New Account </a></li>
       </ul>
     </nav>
