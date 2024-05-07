@@ -17,6 +17,7 @@ def homepage():
 
     # SqlAlchemy Query our db for Tea Flavor Profiles
     # flavor_profiles = crud.show_tea_flavor_profiles()
+    # TODO - remove duplicates from crud query
     tea_origins = crud.show_all_tea_origins()
 
     # to display all results before user selection: query model for all teas, pass to jinja

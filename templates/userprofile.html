@@ -10,6 +10,7 @@
         <th>Tea Group</th>
         <th>Caffeine Range (mg)</th>
         <th>Tea Name</th>
+        <th>Origin</th>
         <th>Remove Favorite</th>
       </tr>
     {% for favorite in user_favorites %}
@@ -18,6 +19,7 @@
         <td>{{ favorite.tea.tea_group }}</td>
         <td>{{ favorite.tea.caff_range_mg }}</td>
         <td>{{ favorite.tea.tea_name }}</td>
+        <td>{{ favorite.tea.tea_origin }}</td>
         <td><a href="/tea-removal/{{ favorite.tea.tea_id }}">Unspot Tea</a></td>
       </tr>
     {% endfor %}

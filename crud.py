@@ -122,7 +122,7 @@ def show_all_tea_origins():
     # query to get all flavor profiles from database
     # return FlavorProfiles.query.all()
 
-    return db.session.query(Teas.tea_origin).all() # [('China'), ('India')...]
+    return db.session.query(Teas.tea_origin).distinct() # [('China'), ('India')...]
 
 # TODO - Later version CRUD operations:
 # delete_tea()
