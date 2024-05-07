@@ -110,10 +110,19 @@ def find_tea_by_flavor(flavor):
     # tea.flavors => [<Flavor1>, <Flavor2>]
 
 def find_tea_by_origin(origin):
-    """Return a tea by origin."""
+    """Find a tea by origin."""
 
     return Teas.query.filter(Teas.tea_origin == origin).first()
 
+
+def show_all_tea_origins():
+    """Return all tea origins."""
+
+    # TODO - update this func so it queries the Teas table and return a list of origins
+    # query to get all flavor profiles from database
+    # return FlavorProfiles.query.all()
+
+    return db.session.query(Teas.tea_origin).all() # [('China'), ('India')...]
 
 # TODO - Later version CRUD operations:
 # delete_tea()
@@ -147,6 +156,7 @@ def create_flavor_profile(tea_flavor):
 def show_tea_flavor_profiles():
     """Return all tea flavor profiles."""
 
+    # TODO - update this func so it queries the Teas table and return a list of origins
     # query to get all flavor profiles from database
     return FlavorProfiles.query.all()
 

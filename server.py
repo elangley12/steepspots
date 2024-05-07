@@ -16,13 +16,14 @@ def homepage():
     """View homepage."""
 
     # SqlAlchemy Query our db for Tea Flavor Profiles
-    flavor_profiles = crud.show_tea_flavor_profiles()
+    # flavor_profiles = crud.show_tea_flavor_profiles()
+    tea_origins = crud.show_all_tea_origins()
 
     # to display all results before user selection: query model for all teas, pass to jinja
     all_teas = crud.show_all_teas()
-    print(f"THIS IS all_teas:        {all_teas}")
+    # print(f"THIS IS all_teas:        {all_teas}")
 
-    return render_template('homepage.html', all_flavors=flavor_profiles, all_teas=all_teas)
+    return render_template('homepage.html', all_origins=tea_origins, all_teas=all_teas)
     # The all_flavors variable is what will get referenced by Jinja when 
     # displaying flavor profiles in the search drop down
 
@@ -128,11 +129,16 @@ def show_user_profile():
 def show_tea_results():
     """Return JSON for tea results."""
 
-    flavor_name = request.json.get('tea_flavor')    
-    flavor_instance = crud.find_flavor_by_flavor_name(flavor_name)
+    # flavor_name = request.json.get('tea_flavor')   
+    # TODO - update for origin
+    origin = request.json.get('tea_origin')
+    # flavor_instance = crud.find_flavor_by_flavor_name(flavor_name)
+    # TODO - call the new crud function
+    tea_origin = crud.find_tea_by_origin(origin)
     
 
     results = []
+    # TODO - update the response
     for tea in flavor_instance.teas:
         tea_dictionary = {
             "tea_id": tea.tea_id,

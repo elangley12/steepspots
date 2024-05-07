@@ -6,12 +6,12 @@
   <h2>Spot New Teas!</h2>
   
   <!-- This is like my search bar form -->
-  <form id="flavor-search"> 
+  <form id="origin-search"> 
     <div class="search-group">
-      <label>Search by flavor:
-        <select id="tea-flavor-field" name="tea-flavor" class="form-control">
-          {% for flavor in all_flavors %}
-            <option value={{flavor.tea_flavor}}>{{flavor.tea_flavor}}</option>
+      <label>Search by origin:
+        <select id="tea-origin-field" name="tea-origin" class="form-control">
+          {% for origin in all_origins %}
+            <option value={{origin[0]}}>{{origin[0]}}</option>
           {% endfor %}
         </select>
       </label>

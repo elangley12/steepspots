@@ -5,8 +5,9 @@ function showTeaResults(evt) {
     evt.preventDefault();
   
     // Take user tea flavor selection, package it up like this
+    // TODO - change form inputs in html, grab those in js here
     const formInputs = {
-      tea_flavor: document.querySelector('#tea-flavor-field').value,
+      tea_origin: document.querySelector('#tea-origin-field').value,
     };
     console.log(formInputs)
     
@@ -55,4 +56,4 @@ function showTeaResults(evt) {
 
 }
 
-document.querySelector('#flavor-search').addEventListener('submit', showTeaResults);
+document.querySelector('#origin-search').addEventListener('submit', showTeaResults);
