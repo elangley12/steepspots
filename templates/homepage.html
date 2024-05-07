@@ -3,12 +3,12 @@
 
 {% block body %}
 
-  <h2>Spot New Teas by Flavor!</h2>
+  <h2>Spot New Teas!</h2>
   
   <!-- This is like my search bar form -->
   <form id="flavor-search"> 
     <div class="search-group">
-      <label>Choose a tea flavor:
+      <label>Search by flavor:
         <select id="tea-flavor-field" name="tea-flavor" class="form-control">
           {% for flavor in all_flavors %}
             <option value={{flavor.tea_flavor}}>{{flavor.tea_flavor}}</option>
@@ -29,10 +29,10 @@
         <thead>
         <tr align="left">
           <th class="header">Tea Group</th>
-          <th class="header">Tea Type</th>
+          <!-- <th class="header">Tea Type</th> -->
           <th class="header">Caffeine Range (mg)</th>
-          <th class="header">Brand Name</th>
-          <th class="header">Brand Flavor Name</th>
+          <!-- <th class="header">Brand Name</th> -->
+          <!-- <th class="header">Brand Flavor Name</th> -->
           <th class="header">Tea Name</th>
           <th class="header">Add to Favorites</th>
         </tr>
@@ -41,10 +41,10 @@
         {% for tea in all_teas %}
           <tr>
             <td>{{ tea.tea_group }}</td>
-            <td>{{ tea.tea_class }}</td>
+            <!-- <td>{{ tea.tea_class }}</td> -->
             <td>{{ tea.caff_range_mg }}</td>
-            <td>{{ tea.tea_brand }}</td>
-            <td>{{ tea.brand_flavor }}</td>
+            <!-- <td>{{ tea.tea_brand }}</td> -->
+            <!-- <td>{{ tea.brand_flavor }}</td> -->
             <td>{{ tea.tea_name }}</td>
             <td><a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a></td>
           </tr>
