@@ -31,6 +31,7 @@
           <th class="header">Tea Group</th>
           <th class="header">Caffeine Range (mg)</th>
           <th class="header">Tea Name</th>
+          <th class="header">Origin</th>
           <th class="header">Add to Favorites</th>
         </tr>
         </thead>
@@ -40,6 +41,7 @@
             <td>{{ tea.tea_group }}</td>
             <td>{{ tea.caff_range_mg }}</td>
             <td>{{ tea.tea_name }}</td>
+            <td>{{ tea.tea_origin }}</td>
             <td><a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a></td>
           </tr>
         {% endfor %}

@@ -131,23 +131,26 @@ def show_tea_results():
 
     # flavor_name = request.json.get('tea_flavor')   
     # TODO - update for origin
-    origin = request.json.get('tea_origin')
+    origin = request.json.get('teaOrigin')
     # flavor_instance = crud.find_flavor_by_flavor_name(flavor_name)
     # TODO - call the new crud function
-    tea_origin = crud.find_tea_by_origin(origin)
+    teas_by_origin = crud.find_teas_by_origin(origin)
     
 
     results = []
     # TODO - update the response
-    for tea in flavor_instance.teas:
+    for tea in teas_by_origin:
         tea_dictionary = {
             "tea_id": tea.tea_id,
             "tea_group": tea.tea_group,
-            "tea_brand": tea.tea_brand,
-            "brand_flavor": tea.brand_flavor,
             "tea_name": tea.tea_name,
-            "tea_class": tea.tea_class,
-            "caff_range_mg": tea.caff_range_mg
+            "caff_range_mg": tea.caff_range_mg,
+            "tea_img": tea.tea_img,
+            "tea_origin": tea.tea_origin,
+            "caff_level": tea.caff_level,
+            "tea_info": tea.tea_info,
+            "tea_color": tea.tea_color,
+            "tea_flavor_notes": tea.tea_flavor_notes
         }
 
         results.append(tea_dictionary)

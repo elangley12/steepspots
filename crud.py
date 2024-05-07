@@ -109,10 +109,10 @@ def find_tea_by_flavor(flavor):
     #   flavor2 = FlavorProfiles(...)
     # tea.flavors => [<Flavor1>, <Flavor2>]
 
-def find_tea_by_origin(origin):
+def find_teas_by_origin(origin):
     """Find a tea by origin."""
 
-    return Teas.query.filter(Teas.tea_origin == origin).first()
+    return Teas.query.filter(Teas.tea_origin == origin).all()
 
 
 def show_all_tea_origins():

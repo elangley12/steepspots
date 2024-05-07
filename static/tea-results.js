@@ -7,7 +7,7 @@ function showTeaResults(evt) {
     // Take user tea flavor selection, package it up like this
     // TODO - change form inputs in html, grab those in js here
     const formInputs = {
-      tea_origin: document.querySelector('#tea-origin-field').value,
+      teaOrigin: document.querySelector('#tea-origin-field').value,
     };
     console.log(formInputs)
     
@@ -29,6 +29,7 @@ function showTeaResults(evt) {
             <th>Tea Group</th>
             <th>Caffeine Range (mg)</th>
             <th>Tea Name</th>
+            <th>Origin</th>
             <th>Add to Favorites</th>
           </tr>`
         results_list += result_headers
@@ -38,7 +39,8 @@ function showTeaResults(evt) {
           const result = 
             `<td>${tea_item['tea_group']}</td>
             <td>${tea_item['caff_range_mg']}</td>
-            <td>${tea_item['tea_name']}</td>`;
+            <td>${tea_item['tea_name']}</td>
+            <td>${tea_item['tea_origin']}</td>`;
           results_list += result;
           // make a variable that will store an html button or link
           const add_to_favorites = 
