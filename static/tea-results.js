@@ -26,10 +26,7 @@ function showTeaResults(evt) {
         const result_headers = 
           `<tr align='left'>
             <th>Tea Group</th>
-            <th>Tea Type</th>
             <th>Caffeine Range (mg)</th>
-            <th>Brand Name</th>
-            <th>Brand Flavor Name</th>
             <th>Tea Name</th>
             <th>Add to Favorites</th>
           </tr>`
@@ -39,10 +36,7 @@ function showTeaResults(evt) {
           results_list += `<tr>`;
           const result = 
             `<td>${tea_item['tea_group']}</td>
-            <td>${tea_item['tea_class']}</td>
             <td>${tea_item['caff_range_mg']}</td>
-            <td>${tea_item['tea_brand']}</td>
-            <td>${tea_item['brand_flavor']}</td>
             <td>${tea_item['tea_name']}</td>`;
           results_list += result;
           // make a variable that will store an html button or link

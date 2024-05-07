@@ -75,14 +75,12 @@ for parent_dict in api_results:
             individual_tea_dict = {
                 "caff_range_mg": parent_dict['types'][tea]['caffeine'],
                 "tea_name": parent_dict['types'][tea]['name'],
-                "tea_group": parent_dict['types'][tea]['type'].title(),
-                
-                # not in model yet
+                "tea_group": parent_dict['types'][tea]['type'].capitalize(),
                 "tea_img": parent_dict['types'][tea]['image'],
                 "tea_origin": parent_dict['types'][tea]['origin'],
-                "caff_level": parent_dict['types'][tea]['caffeineLevel'].title(),
-                "tea_color": parent_dict['types'][tea]['colorDescription'].title(),
-                "tea_flavor_notes": parent_dict['types'][tea]['tasteDescription'].title(),
+                "caff_level": parent_dict['types'][tea]['caffeineLevel'].capitalize(),
+                "tea_color": parent_dict['types'][tea]['colorDescription'].capitalize(),
+                "tea_flavor_notes": parent_dict['types'][tea]['tasteDescription'].capitalize(),
                 # "web_sources": parent_dict['types'][tea]['sources']  =>  # because this is a list, it would actual be better to make a new table for URLs
             }
 

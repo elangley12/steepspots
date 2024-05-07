@@ -8,10 +8,7 @@
     <table id="user-tea-results">
       <tr align="left">
         <th>Tea Group</th>
-        <th>Tea Type</th>
         <th>Caffeine Range (mg)</th>
-        <th>Brand Name</th>
-        <th>Brand Flavor Name</th>
         <th>Tea Name</th>
         <th>Remove Favorite</th>
       </tr>
@@ -19,10 +16,7 @@
       <!-- <Favorite>.tea.<column> -->
       <tr>
         <td>{{ favorite.tea.tea_group }}</td>
-        <td>{{ favorite.tea.tea_class }}</td>
         <td>{{ favorite.tea.caff_range_mg }}</td>
-        <td>{{ favorite.tea.tea_brand }}</td>
-        <td>{{ favorite.tea.brand_flavor }}</td>
         <td>{{ favorite.tea.tea_name }}</td>
         <td><a href="/tea-removal/{{ favorite.tea.tea_id }}">Unspot Tea</a></td>
       </tr>

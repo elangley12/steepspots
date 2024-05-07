@@ -20,6 +20,7 @@ def homepage():
 
     # to display all results before user selection: query model for all teas, pass to jinja
     all_teas = crud.show_all_teas()
+    print(f"THIS IS all_teas:        {all_teas}")
 
     return render_template('homepage.html', all_flavors=flavor_profiles, all_teas=all_teas)
     # The all_flavors variable is what will get referenced by Jinja when 

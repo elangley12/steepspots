@@ -29,10 +29,7 @@
         <thead>
         <tr align="left">
           <th class="header">Tea Group</th>
-          <!-- <th class="header">Tea Type</th> -->
           <th class="header">Caffeine Range (mg)</th>
-          <!-- <th class="header">Brand Name</th> -->
-          <!-- <th class="header">Brand Flavor Name</th> -->
           <th class="header">Tea Name</th>
           <th class="header">Add to Favorites</th>
         </tr>
@@ -41,10 +38,7 @@
         {% for tea in all_teas %}
           <tr>
             <td>{{ tea.tea_group }}</td>
-            <!-- <td>{{ tea.tea_class }}</td> -->
             <td>{{ tea.caff_range_mg }}</td>
-            <!-- <td>{{ tea.tea_brand }}</td> -->
-            <!-- <td>{{ tea.brand_flavor }}</td> -->
             <td>{{ tea.tea_name }}</td>
             <td><a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a></td>
           </tr>
