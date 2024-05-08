@@ -25,28 +25,21 @@
   https://www.bu.edu/tech/services/cccs/websites/www/wordpress/how-to/sortable-searchable-tables/#:~:text=Adding%20the%20%E2%80%9Csortable%E2%80%9D%20class%20to,cell%20in%20an%20HTML%20table. -->
   <div>
     <div class="all-results">
-      <table class="sortable" id="tea-results">
-        <thead>
-        <tr align="left">
-          <th class="header">Tea Group</th>
-          <th class="header">Caffeine Range (mg)</th>
-          <th class="header">Tea Name</th>
-          <th class="header">Origin</th>
-          <th class="header">Add to Favorites</th>
-        </tr>
-        </thead>
-        <tbody>
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="tea-results">
         {% for tea in all_teas %}
-          <tr>
-            <td>{{ tea.tea_group }}</td>
-            <td>{{ tea.caff_range_mg }}</td>
-            <td>{{ tea.tea_name }}</td>
-            <td>{{ tea.tea_origin }}</td>
-            <td><a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a></td>
-          </tr>
+          <div class="col">
+            <div class="card">
+              <img src="{{ tea.tea_img }}" class="card-img-top" alt="Image of tea">
+              <div class="card-body">
+                <h5 class="card-title">Tea Name: {{ tea.tea_name }}</h5>
+                <p class="card-text">Origin: {{ tea.tea_origin }}</p>
+                <a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a>
+                <!-- TODO - find a default img for empty tea_img, play with sizing -->
+              </div>
+            </div>
+          </div>
         {% endfor %}
-      </tbody>
-    </table>
+      </div>
     </div>
   </div>
 
