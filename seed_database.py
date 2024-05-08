@@ -89,8 +89,8 @@ for parent_dict in api_results:
             elif 'description' in parent_dict['types'][tea].keys():
                 individual_tea_dict["tea_info"] = parent_dict['types'][tea]['description']
 
-            if 'https://tea-api-boonaki' in parent_dict['types'][tea]['image'].values():
-                individual_tea_dict["tea_img"] = "https://www.pickpik.com/tea-variety-drink-healthy-chinese-herb-74076"
+            if 'https://tea-api-boonaki' in parent_dict['types'][tea]['image']:
+                individual_tea_dict["tea_img"] = "https://i1.pickpik.com/photos/967/748/941/tea-variety-drink-healthy-preview.jpg"
 
             # take this information and pass it to the crud.create_tea()
             db_tea = crud.create_tea(individual_tea_dict)

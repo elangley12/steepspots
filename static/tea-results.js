@@ -24,33 +24,19 @@ function showTeaResults(evt) {
         let results_list = "";
         // console.log(res);
 
-        const result_headers = 
-          `<tr align='left'>
-            <th>Tea Group</th>
-            <th>Caffeine Range (mg)</th>
-            <th>Tea Name</th>
-            <th>Origin</th>
-            <th>Add to Favorites</th>
-          </tr>`
-        results_list += result_headers
-
         for (const tea_item of res) {
-          results_list += `<tr>`;
           const result = 
-            `<td>${tea_item['tea_group']}</td>
-            <td>${tea_item['caff_range_mg']}</td>
-            <td>${tea_item['tea_name']}</td>
-            <td>${tea_item['tea_origin']}</td>`;
+            `<div class="col">
+            <div class="card">
+              <img src="${tea_item.tea_img}" class="card-img-top tea-cards" alt="Image of tea">
+              <div class="card-body">
+                <h5 class="card-title">Tea Name: ${tea_item.tea_name}</h5>
+                <p class="card-text">Origin: ${tea_item.tea_origin}</p>
+                <a class="btn btn-outline-dark" href="/tea-profile/${tea_item.tea_id}">Spot Tea</a>
+              </div>
+            </div>
+          </div>`;
           results_list += result;
-          // make a variable that will store an html button or link
-          const add_to_favorites = 
-            `<td>
-              <a href="/tea-profile/${tea_item['tea_id']}">Spot Tea</a>
-            </td>`;
-            // link would call to a Flask route to add to user favorites
-          // concatenate the variable above to results_list
-          results_list += add_to_favorites;
-          results_list += `</tr>`;
         }
 
         teaResults.innerHTML = results_list;

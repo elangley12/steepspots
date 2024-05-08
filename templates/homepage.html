@@ -29,12 +29,11 @@
         {% for tea in all_teas %}
           <div class="col">
             <div class="card">
-              <img src="{{ tea.tea_img }}" class="card-img-top" alt="Image of tea">
+              <img src="{{ tea.tea_img }}" class="card-img-top tea-cards" alt="Image of tea">
               <div class="card-body">
                 <h5 class="card-title">Tea Name: {{ tea.tea_name }}</h5>
                 <p class="card-text">Origin: {{ tea.tea_origin }}</p>
-                <a href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a>
-                <!-- TODO - find a default img for empty tea_img, play with sizing -->
+                <a class="btn btn-outline-dark" href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a>
               </div>
             </div>
           </div>
