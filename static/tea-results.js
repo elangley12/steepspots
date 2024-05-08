@@ -1,5 +1,5 @@
 'use strict';
-
+// here's a good spot to add an alert for testing connections
 
 function showTeaResults(evt) {
     evt.preventDefault();

@@ -2,22 +2,8 @@
 {% block title %} SteepSpots | Home {% endblock %}
 
 {% block body %}
-
-  <h2>Spot New Teas!</h2>
   
-  <!-- This is like my search bar form -->
-  <form id="origin-search"> 
-    <div class="search-group">
-      <label>Search by origin:
-        <select id="tea-origin-field" name="tea-origin" class="form-control">
-          {% for origin in all_origins %}
-            <option value={{origin[0]}}>{{origin[0]}}</option>
-          {% endfor %}
-        </select>
-      </label>
-      <button type="submit" id="search-form-button" class="btn btn-primary mt-2">Search</button>
-    </div>
-  </form>
+  
   
   <!-- tip: check out card component from bootstrap -->
   <!-- TODO - add class to table headers for quick styling later, also move this to JS probably-->

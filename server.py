@@ -164,11 +164,15 @@ def show_tea_results():
 def add_favorite_tea(tea_id):
     """Add tea to user profile."""
 
-    user_id = session["user"]
+    if 'user' in session:
+        user_id = session["user"]
+        favorite_tea = crud.create_favorite_tea(user_id, tea_id)
+        return redirect("/user_profile")
+    else:
+        flash("Please login or create an account to favorite teas.")
+        return redirect('/')
 
-    favorite_tea = crud.create_favorite_tea(user_id, tea_id)
 
-    return redirect("/user_profile")
 
 
 
