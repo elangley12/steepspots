@@ -4,6 +4,10 @@
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+const document.querySelectorAll('.carousel').carousel(
+  interval: 2000
+)
+
 function showTeaResults(evt) {
     evt.preventDefault();
   
