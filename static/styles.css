@@ -1,4 +1,6 @@
 /* 
+<!-- https://www.svgrepo.com/collection/solar-broken-line-icons/ -->
+
 black           #000000
 rust            #AD4922
 dun             #E7CEB5
@@ -6,7 +8,14 @@ reseda green    #5C755E
 */
 
 .container{
+    /* background-color: #e7ceb5; */
+}
+
+#about-background{
     background-color: #e7ceb5;
+    height: 50vh;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 
@@ -21,9 +30,11 @@ reseda green    #5C755E
     object-fit: cover;
 }
 
+
 #search-label {
     margin-right: .5%;
 }
+
 
 .spot-tea-tooltip{
     --bs-tooltip-bg: #000000;

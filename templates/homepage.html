@@ -2,7 +2,14 @@
 {% block title %} SteepSpots | Home {% endblock %}
 
 {% block body %}
-  <div>
+  <div class="container-fluid" style="padding-right:0; padding-left:0;">
+    <div id="about-background">
+      [reference box]
+      <!-- try putting carosel here from bootstrap and check padding/margin -->
+    </div>
+  </div>
+
+  <div class="container">
     <div class="all-results">
       <div class="row row-cols-1 row-cols-md-3 g-4" id="tea-results">
         {% for tea in all_teas %}
