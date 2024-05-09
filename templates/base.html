@@ -53,16 +53,17 @@
         <!-- flask html jinja if statement to check route, only want to show on homepage -->
         {% if request.endpoint == 'homepage'  %}
         <label id="search-label">Search by origin: </label>
-        <form id="origin-search" class="search-group d-flex" role="search"> 
-              <select id="tea-origin-field" name="tea-origin" class="form-control form-control me-2" aria-label="Search">
-                {% for origin in all_origins %}
-                  <option value={{origin[0]}}>{{origin[0]}}</option>
-                {% endfor %}
-              </select>
-            <button type="submit" id="search-form-button" class="btn btn-dark">Search</button>
-        </form>
+          <form id="origin-search" class="search-group d-flex" role="search"> 
+              <!-- <div class="dropdown">     -->
+                <select id="tea-origin-field" name="tea-origin" class="form-control form-control me-2" aria-label="Search">
+                  {% for origin in all_origins %}
+                    <option value={{origin[0]}}>{{origin[0]}}</option>
+                  {% endfor %}
+                </select>
+              <!-- </div> -->
+              <button type="submit" id="search-form-button" class="btn btn-dark">Search</button>
+          </form>
         {% endif %}
-        
       </div>
     </nav>
     
