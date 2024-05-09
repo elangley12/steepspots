@@ -2,24 +2,26 @@
 {% block title %} SteepSpots | Home {% endblock %}
 
 {% block body %}
-  
-  
-  
-  <!-- tip: check out card component from bootstrap -->
-  <!-- TODO - add class to table headers for quick styling later, also move this to JS probably-->
-  <!-- Tried to make the table sortable by following this site, but no luck:
-  https://www.bu.edu/tech/services/cccs/websites/www/wordpress/how-to/sortable-searchable-tables/#:~:text=Adding%20the%20%E2%80%9Csortable%E2%80%9D%20class%20to,cell%20in%20an%20HTML%20table. -->
   <div>
     <div class="all-results">
       <div class="row row-cols-1 row-cols-md-3 g-4" id="tea-results">
         {% for tea in all_teas %}
           <div class="col">
             <div class="card">
-              <img src="{{ tea.tea_img }}" class="card-img-top tea-cards" alt="Image of tea">
+              <img src="{{ tea.tea_img }}" class="card-img-top tea-cards" 
+              data-bs-toggle="tooltip" data-bs-placement="top" 
+              data-bs-custom-class="tea-img-tooltip"
+              data-bs-title="{{ tea.tea_flavor_notes }}" 
+              alt="Image of tea">
               <div class="card-body">
-                <h5 class="card-title">Tea Name: {{ tea.tea_name }}</h5>
-                <p class="card-text">Origin: {{ tea.tea_origin }}</p>
-                <a class="btn btn-outline-dark" href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a>
+                <h5 class="card-title">{{ tea.tea_name }} ({{tea.tea_origin}})</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ tea.tea_group }} tea</h6>
+                <h6 class="card-subtitle mb-2 text-muted">{{ tea.caff_level }} caffeine ({{ tea.caff_range_mg }} per cup)</h6>
+                <p class="card-text">{{ tea.tea_info }}</p>
+                <a class="btn btn-outline-dark" data-bs-toggle="tooltip" 
+                data-bs-placement="bottom" data-bs-custom-class="spot-tea-tooltip"
+                data-bs-title="click to save favorite" 
+                href="/tea-profile/{{ tea.tea_id }}">Spot Tea</a>
               </div>
             </div>
           </div>

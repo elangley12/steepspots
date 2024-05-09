@@ -1,3 +1,21 @@
+/* 
+black           #000000
+rust            #AD4922
+dun             #E7CEB5
+reseda green    #5C755E
+*/
+
+.container{
+    background-color: #e7ceb5;
+}
+
+
+.flash-msg{
+    border: #AD4922;
+    color: #AD4922;
+}
+
+
 .tea-cards {
     height: 50vh;
     object-fit: cover;
@@ -5,4 +23,10 @@
 
 #search-label {
     margin-right: .5%;
+}
+
+.spot-tea-tooltip{
+    --bs-tooltip-bg: #000000;
+    --bs-tooltip-opacity: .5;
+    --bs-tooltip-color: white;
 }

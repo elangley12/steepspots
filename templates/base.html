@@ -42,15 +42,7 @@
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="/logout"> Logout </a></li>
               </ul>
-            <!-- </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li> -->
           </ul>
-          <!-- <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> -->
         </div>
         
         <!-- flask html jinja if statement to check route, only want to show on homepage -->
@@ -69,29 +61,19 @@
       </div>
     </nav>
     
-    <!-- <h1>SteepSpots</h1> -->
 
-    <p>
-    {% if 'user' in session %}
-      Current user: {{ session['user'] }}
-    {% endif %}
-    </p>
-
-    <nav>
-      <!-- <h2>Navigation</h2> -->
-      <ul>
-        <!-- <li><a href="/"> Home </a></li> -->
-        <!-- <li><a href="/user_profile"> Profile </a></li> -->
-        <!-- <li><a href="/sign-in"> Login </a></li> -->
-        <!-- <li><a href="/logout"> Logout </a></li> -->
-        <!-- <li><a href="/create-account"> Create New Account </a></li> -->
-      </ul>
-    </nav>
+    <!-- <p>
+    {# if 'user' in session #}
+      {# Current user: {{ session['user'] }} #}
+    {# endif #}
+    </p> -->
 
     {% for msg in get_flashed_messages() %}
-      <p class="flash-msg">
-        {{ msg }}
-      </p>
+      <div class="container">
+        <p class="flash-msg">
+          {{ msg }}
+        </p>
+      </div>
     {% endfor %}
     
     <div class="container">{% block body %} PLACEHOLDER {% endblock %}</div>
