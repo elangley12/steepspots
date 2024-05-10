@@ -6,16 +6,20 @@
 <div id="about-background" class="container-fluid" style="padding-right:0; padding-left:0;">
   
   <div id="about-carousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- TODO - make the below div a jinja for loop for each favorited tea -->
-    <div class="carousel-indicators">
+    <!-- 
+      TODO - make the below div a jinja for loop for each favorited tea 
+
+
+    -->
+    <!-- <div class="carousel-indicators">
       <button type="button" data-bs-target="#about-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#about-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#about-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+    </div> -->
 
     <div class="carousel-inner">
       {% for favorite in user_favorites %}
-      <div class="carousel-item active">
+      <div class="carousel-item profile-carousel">
         <img src="{{ favorite.tea.tea_img }}" class="d-block w-100 carousel-img" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h4>{{ favorite.tea.tea_name }} ({{favorite.tea.tea_origin}})</h4>
@@ -63,5 +67,5 @@
     </div>
   </div>
 </div>
-
+<script src="/static/user-prof-carousel.js"></script>
 {% endblock %}
