@@ -71,6 +71,7 @@
     {% for msg in get_flashed_messages() %}
       <div class="container-fluid">
         <p class="flash-msg">
+          <img src="../static/images/important.svg" id="important-icon">
           {{ msg }}
         </p>
       </div>

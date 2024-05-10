@@ -20,6 +20,11 @@ reseda green    #5C755E
     color: #AD4922;
 }
 
+#important-icon {
+    height: 2rem;
+    width: 2rem;
+}
+
 
 .tea-cards {
     height: 50vh;
