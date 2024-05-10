@@ -4,26 +4,30 @@
 {% block body %}
 
 <div>
-  <div class="user-results">
-    <table id="user-tea-results">
-      <tr align="left">
-        <th>Tea Group</th>
-        <th>Caffeine Range (mg)</th>
-        <th>Tea Name</th>
-        <th>Origin</th>
-        <th>Remove Favorite</th>
-      </tr>
-    {% for favorite in user_favorites %}
-      <!-- <Favorite>.tea.<column> -->
-      <tr>
-        <td>{{ favorite.tea.tea_group }}</td>
-        <td>{{ favorite.tea.caff_range_mg }}</td>
-        <td>{{ favorite.tea.tea_name }}</td>
-        <td>{{ favorite.tea.tea_origin }}</td>
-        <td><a href="/tea-removal/{{ favorite.tea.tea_id }}">Unspot Tea</a></td>
-      </tr>
-    {% endfor %}
-  </table>
+  <div class="container user-results">
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="user-tea-results">
+      {% for favorite in user_favorites %}
+        <div class="col">
+          <div class="card">
+            <img src="{{ favorite.tea.tea_img }}" class="card-img-top tea-cards" 
+            data-bs-toggle="tooltip" data-bs-placement="top" 
+            data-bs-custom-class="tea-img-tooltip"
+            data-bs-title="{{ favorite.tea.tea_flavor_notes }}" 
+            alt="Image of tea">
+            <div class="card-body">
+              <h5 class="card-title">{{ favorite.tea.tea_name }} ({{favorite.tea.tea_origin}})</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ favorite.tea.tea_group }} tea</h6>
+              <h6 class="card-subtitle mb-2 text-muted">{{ favorite.tea.caff_level }} caffeine ({{ favorite.tea.caff_range_mg }} per cup)</h6>
+              <p class="card-text">{{ favorite.tea.tea_info }}</p>
+              <a class="btn btn-outline-dark" data-bs-toggle="tooltip" 
+              data-bs-placement="bottom" data-bs-custom-class="spot-tea-tooltip"
+              data-bs-title="click to remove favorite" 
+              href="/tea-removal/{{ favorite.tea.tea_id }}">Unspot Tea</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
