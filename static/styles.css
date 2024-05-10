@@ -7,6 +7,18 @@ dun             #E7CEB5
 reseda green    #5C755E
 */
 
+.navbar-brand{
+    font-family: "Cutive", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.btn-outline-dark{
+    font-family: "Cutive", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 100%;
+}
 
 #about-background{
     height: 50vh;
@@ -62,8 +74,10 @@ reseda green    #5C755E
 }
 
 h4 {
-    font-family: sans-serif;
-    font-size: 300%;
+    font-family: "Cutive", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 400%;
 }
 
 
