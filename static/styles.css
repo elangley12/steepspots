@@ -20,6 +20,13 @@ reseda green    #5C755E
     font-size: 100%;
 }
 
+.collapse{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 #about-background{
     height: 50vh;
     margin-top: 5%;
@@ -43,9 +50,27 @@ reseda green    #5C755E
     object-fit: cover;
 }
 
+.card{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 #search-label {
     padding-right: 1rem;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.search-group{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 
@@ -60,6 +85,14 @@ reseda green    #5C755E
     margin-top: 5%;
     margin-bottom: 5%;
     position: middle;
+}
+
+#about-carousel p {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 150%;
 }
 
 

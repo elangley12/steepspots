@@ -8,7 +8,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
 function showTeaResults(evt) {
     evt.preventDefault();
-  
+    console.log("Show tea results function hit")
     // Take user tea flavor selection, package it up like this
     // TODO - change form inputs in html, grab those in js here
     const formInputs = {
@@ -36,17 +36,20 @@ function showTeaResults(evt) {
             <img src="${tea_item.tea_img}" class="card-img-top tea-cards" 
             data-bs-toggle="tooltip" data-bs-placement="top" 
             data-bs-custom-class="tea-img-tooltip"
-            data-bs-title="${ tea_item.tea_flavor_notes }" 
+            data-bs-title="${tea_item.tea_flavor_notes}" 
             alt="Image of tea">
             <div class="card-body">
-              <h5 class="card-title">${ tea_item.tea_name } (${tea_item.tea_origin})</h5>
-              <h6 class="card-subtitle mb-2 text-muted">${ tea_item.tea_group } tea</h6>
-              <h6 class="card-subtitle mb-2 text-muted">${ tea_item.caff_level } caffeine (${ tea_item.caff_range_mg } per cup)</h6>
-              <p class="card-text">${ tea_item.tea_info }</p>
+              <h5 class="card-title">${tea_item.tea_name} (${tea_item.tea_origin})</h5>
+              <h6 class="card-subtitle mb-2 text-muted">${tea_item.tea_group} tea</h6>
+              <h6 class="card-subtitle mb-2 text-muted">${tea_item.caff_level} caffeine (${ tea_item.caff_range_mg } per cup)</h6>
+              <p class="card-text">${tea_item.tea_info}</p>
               <a class="btn btn-outline-dark" data-bs-toggle="tooltip" 
               data-bs-placement="bottom" data-bs-custom-class="spot-tea-tooltip"
               data-bs-title="click to save favorite" 
-              href="/tea-profile/${ tea_item.tea_id }">Spot Tea</a>
+              href="/tea-profile/${tea_item.tea_id}">
+                <img src=" ../static/images/spot-tea.svg" id="spot-tea-icon">
+                spot
+              </a>
               </div>
             </div>
           </div>`;
