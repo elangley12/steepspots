@@ -114,6 +114,14 @@ h4 {
 }
 
 
+h3 {
+    font-family: "Cutive", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 300%;
+}
+
+
 #spot-tea-icon {
     height: 2rem;
     width: 2rem;
