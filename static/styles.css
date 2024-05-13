@@ -103,7 +103,7 @@ reseda green    #5C755E
 
 
 .container {
-    margin-bottom: 5%;
+    padding-bottom: calc(var(--bs-gutter-x)* 5);
 }
 
 h4 {
