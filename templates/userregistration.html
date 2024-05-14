@@ -5,8 +5,9 @@
 
 {% block body %}
 
-<h2>Create a SteepSpots Account</h2>
-  <form action="/registration" method="POST">
+<div class="container center">
+  <form id="sign-in" action="/registration" method="POST">
+    <h2>Create a SteepSpots Account</h2>
     <p>
         First Name <input required type="text" name="fname">
     </p>
@@ -27,5 +28,6 @@
       <input type="submit">
     </p>
   </form>
+</div>
 
 {% endblock %}

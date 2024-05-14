@@ -3,19 +3,22 @@
 
 {% block body %}
 
-    <h2>Log In</h2>
-    <form action="/login" method="POST">
-    <p>
-        Email <input required type="text" name="email">
-    </p>
+<div class="container center">
+    
+    <form id="sign-in" action="/login" method="POST">
+        <h2>Log In</h2>
+        <p>
+            Email <input required type="text" name="email">
+        </p>
 
-    <p>
-        Password <input required type="password" name="password">
-    </p>
+        <p>
+            Password <input required type="password" name="password">
+        </p>
 
-    <p>
-        <input type="submit">
-    </p>
+        <p>
+            <input type="submit">
+        </p>
     </form>
+</div>
 
 {% endblock %}

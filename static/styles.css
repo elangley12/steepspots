@@ -122,7 +122,32 @@ h3 {
 }
 
 
+h2 {
+    font-family: "Cutive", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 150%;
+}
+
+
+#sign-in p {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 100%;
+}
+
+
 #spot-tea-icon {
     height: 2rem;
     width: 2rem;
+}
+
+
+.center { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 500px; 
 }
