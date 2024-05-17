@@ -132,6 +132,11 @@ def show_tea_results():
 
     # flavor_name = request.json.get('tea_flavor')   
     # TODO - update for origin
+    
+    # line 139 said another way:
+    # request.json dictionary => get key from that dictionary
+    # request.json['teaOrigin']
+    
     origin = request.json.get('teaOrigin')
     # flavor_instance = crud.find_flavor_by_flavor_name(flavor_name)
     # TODO - call the new crud function

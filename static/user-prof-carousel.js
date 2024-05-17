@@ -1,5 +1,6 @@
 'use strict';
 
+
 //select all the carousle by the profilecarosel class
 
 //queryselectorall - returns list of elements
@@ -10,5 +11,5 @@ if (listOfFavTeas.length > 0) {
 }
     
 
-//only add the active class to the first one in the list
-// look at js dom lecture
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

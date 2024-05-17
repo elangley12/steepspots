@@ -1,12 +1,36 @@
 'use strict';
 // here's a good spot to add an alert for testing connections
 
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+let tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+let tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+// lst1 = [1,2,3]
+// lst2 = [4,5,6]
+// lst2.append(7) => modify python lists freely
+
+// in js, to modify things made with const, we have to make a copy
+
+// [...tooltipTriggerList] => take a copy of every single item in this Array, in the same index order
+
+// let sessionObj = {'key': 'value', 'currUser': 'user1'}
+// sessionObj = { ... sessionObj, 'currUSer': None }
+// sessionObj['currUser'] = None // this is still good syntax
+
+// ... == "Spread Operator"
+
+// tooltipTriggerList => Array() => [<tooltip>,<tooltip>,<tooltip>,</tooltip>]
+
+// tooltipTriggerList.map => for item in array, do this
+// iterate over the entire list and do this thing
+
+// // [].map( iterable => what to do with that iterable )
+// [...tooltipTriggerList].iterate(function callBack(tooltipTriggerEl) {
+//     return new bootstrap.Tooltip(tooltipTriggerEl)
+//   });
 
 
 function showTeaResults(evt) {
+    console.log(evt);
     evt.preventDefault();
     console.log("Show tea results function hit")
     // Take user tea flavor selection, package it up like this
@@ -57,6 +81,8 @@ function showTeaResults(evt) {
         }
 
         teaResults.innerHTML = results_list;
+        tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     });
 
 }
