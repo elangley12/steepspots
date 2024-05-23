@@ -75,8 +75,8 @@ From the homepage, users have the option to login or create a new SteepSpots acc
 
 On the homepage navbar, users can search for teas based on origin and then see the results without needing to refresh the page. Users who are logged in can "spot" a tea to add it to their Profile page for later exploration.
 
-<!-- ![Homepage Search](/steepspots/static/gifs/homepage-search.gif)
-<br/><br/><br/> -->
+![Homepage Search](/static/gifs/homepage-search.gif)
+<br/><br/><br/>
 
 #### Profile
 From the user’s profile, users can view their favorited teas, and they can click "unspot" to remove a tea from their favorite’s list. Users can enjoy the dynamically generated carousel from their Profile displaying teas they have favorited, and if a user chooses to unspot a tea from their profile, the carousel will update automatically to match their new list of favorites.
