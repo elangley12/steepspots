@@ -2,6 +2,10 @@
 {% block title %} Home - Discover the world one spot of tea at a time | SteepSpots {% endblock %}
 
 {% block body %}
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
 <div id="about-background" class="container-fluid" style="padding-right:0; padding-left:0;">
 
   <div id="homepage-carousel"> </div>
@@ -51,5 +55,6 @@
 
 {% block after_body %}
 <script src="/static/tea-results.js"></script>
+<script src="/static/homepage-carousel.jsx" type="text/jsx"></script>
 {% endblock %}
  
