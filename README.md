@@ -121,3 +121,5 @@ Contact the author for permissions.
 * Ray Traina
 * Trew Boisvert
 * Hackbright Academy
+
+<img src="/steepspots/static/images/steepspotsthankyou.png">
