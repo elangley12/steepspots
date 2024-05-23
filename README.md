@@ -1,5 +1,4 @@
 <img src="https://github.com/elangley12/steepspots/blob/main/static/images/steepspotsintroslide.png?raw=true">
-<br/><br/><br/>
 
 ### Welcome
 Come steep your senses in a global, tea-venturous experience! SteepSpots is a full-stack Flask web app that lets users embark on a flavorful journey around the world. Users can search for new teas by tea origin, create a secure account, and spot teas to curate their favorites list.
