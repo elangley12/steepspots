@@ -1,4 +1,5 @@
 # <img src="/steepspots/static/images/steepspotsintroslide.png">
+<br/><br/><br/>
 
 ### Welcome
 Come steep your senses in a global, tea-venturous experience! SteepSpots is a full-stack Flask web app that lets users embark on a flavorful journey around the world. Users can search for new teas by tea origin, create a secure account, and spot teas to curate their favorites list.
@@ -8,12 +9,14 @@ Looking ahead, SteepSpots will incorporate Google OAuth for seamless login, leve
 :computer: [VIEW DEMO ON YOUTUBE](https://www.youtube.com/watch?v=rNd63vCU_ls) :computer:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rNd63vCU_ls?si=EIn-XYTsU4hfQFwL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br/><br/><br/>
 
 ## Table of Contents🐛
 
 * [Getting Started](#getting-started)
 * [App Features](#app-features)
 * [General Info](#gen-info)
+<br/><br/><br/>
 
 
 ### <a name="getting-started"></a>Getting Started
@@ -60,6 +63,7 @@ Then, run the application with ```python3 server.py```:
  * Connected to the db!
 ```
 You should see similar success messages in the console. If you have any issues getting up and running, please contact the author via GitHub.
+<br/><br/><br/>
 
 ### <a name="app-features"></a>App Features
 Once it is up and running on your local machine, continue to run the demo freely, paying particular attention to the below pages.
