@@ -1,4 +1,4 @@
-# <img src="/steepspots/static/images/steepspotsintroslide.png">
+<img src="/steepspots/static/images/steepspotsintroslide.png">
 <br/><br/><br/>
 
 ### Welcome
