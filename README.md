@@ -126,4 +126,4 @@ Contact the author for permissions.
 * Trew Boisvert
 * Hackbright Academy
 
-<img src="/steepspots/static/images/steepspotsthankyou.png">
+<img src="https://github.com/elangley12/steepspots/blob/main/static/images/steepspotsthankyou.png?raw=true" >
