@@ -1,4 +1,5 @@
-<img src="/steepspots/static/images/steepspotsintroslide.png">
+<!-- <img src="/steepspots/static/images/steepspotsintroslide.png"> -->
+<img src="https://github.com/elangley12/steepspots/blob/main/static/images/steepspotsintroslide.png?raw=true">
 <br/><br/><br/>
 
 ### Welcome
