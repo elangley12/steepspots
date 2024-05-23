@@ -70,7 +70,7 @@ Once it is up and running on your local machine, continue to run the demo freely
 #### Home
 From the homepage, users have the option to login or create a new SteepSpots account.  
 
-<!-- ![Nav to Login](https://github.com/elangley12/steepspots/blob/main/static/gifs/nav-to-login.gif?raw=true)
+<!-- ![Nav to Login](https://raw.githubusercontent.com/elangley12/steepspots/main/static/gifs/nav-to-login.gif)
 <br/><br/><br/> -->
 
 On the homepage navbar, users can search for teas based on origin and then see the results without needing to refresh the page. Users who are logged in can "spot" a tea to add it to their Profile page for later exploration.
