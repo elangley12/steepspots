@@ -5,10 +5,6 @@ Come steep your senses in a global, tea-venturous experience! SteepSpots is a fu
 
 Looking ahead, SteepSpots will incorporate Google OAuth for seamless login, leverage open source AI models to offer personalized recommendations, and integrate data visualization libraries for deeper exploration through interactive maps and charts. Stay tuned!
 
-:computer: [VIEW DEMO ON YOUTUBE](https://www.youtube.com/watch?v=rNd63vCU_ls) :computer:
-
-
-[![SteepSpots](https://img.youtube.com/vi/rNd63vCU_ls/0.jpg)](https://www.youtube.com/watch?v=rNd63vCU_ls)
 <br/><br/><br/>
 
 ## Table of Contents🐛
@@ -71,18 +67,24 @@ Once it is up and running on your local machine, continue to run the demo freely
 #### Home
 From the homepage, users have the option to login or create a new SteepSpots account.  
 
-![Nav to Login](/static/gifs/nav-to-login.gif)
-<br/><br/><br/>
+<!-- ![Nav to Login](/static/gifs/nav-to-login.gif) -->
+<!-- <br/><br/><br/> -->
 
 On the homepage navbar, users can search for teas based on origin and then see the results without needing to refresh the page. Users who are logged in can "spot" a tea to add it to their Profile page for later exploration.
 
-![Homepage Search](/static/gifs/homepage-search.gif)
-<br/><br/><br/>
+<!-- ![Homepage Search](/static/gifs/homepage-search.gif) -->
+<!-- <br/><br/><br/> -->
 
 #### Profile
 From the user’s profile, users can view their favorited teas, and they can click "unspot" to remove a tea from their favorite’s list. Users can enjoy the dynamically generated carousel from their Profile displaying teas they have favorited, and if a user chooses to unspot a tea from their profile, the carousel will update automatically to match their new list of favorites.
 
-![User Profile](/static/gifs/user-profile.gif)
+<!-- ![User Profile](/static/gifs/user-profile.gif) -->
+
+
+:computer: [VIEW DEMO ON YOUTUBE](https://www.youtube.com/watch?v=rNd63vCU_ls) :computer:
+
+
+[![SteepSpots](https://img.youtube.com/vi/rNd63vCU_ls/0.jpg)](https://www.youtube.com/watch?v=rNd63vCU_ls)
 <br/><br/><br/>
 
 ### <a name="gen-info"></a>General Information
