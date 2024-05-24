@@ -5,14 +5,14 @@ Come steep your senses in a global, tea-venturous experience! SteepSpots is a fu
 
 Looking ahead, SteepSpots will incorporate Google OAuth for seamless login, leverage open source AI models to offer personalized recommendations, and integrate data visualization libraries for deeper exploration through interactive maps and charts. Stay tuned!
 
-<br/><br/><br/>
+<br/><br/>
 
 ## Table of Contents🐛
 
 * [Getting Started](#getting-started)
 * [App Features](#app-features)
 * [General Info](#gen-info)
-<br/><br/><br/>
+<br/><br/>
 
 
 ### <a name="getting-started"></a>Getting Started
@@ -59,7 +59,7 @@ Then, run the application with ```python3 server.py```:
  * Connected to the db!
 ```
 You should see similar success messages in the console. If you have any issues getting up and running, please contact the author via GitHub.
-<br/><br/><br/>
+<br/><br/>
 
 ### <a name="app-features"></a>App Features
 Once it is up and running on your local machine, continue to run the demo freely, paying particular attention to the below pages.
@@ -85,7 +85,7 @@ From the user’s profile, users can view their favorited teas, and they can cli
 
 
 [![SteepSpots](https://img.youtube.com/vi/rNd63vCU_ls/0.jpg)](https://www.youtube.com/watch?v=rNd63vCU_ls)
-<br/><br/><br/>
+<br/><br/>
 
 ### <a name="gen-info"></a>General Information
 
