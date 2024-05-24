@@ -7,7 +7,6 @@ Looking ahead, SteepSpots will incorporate Google OAuth for seamless login, leve
 
 :computer: [VIEW DEMO ON YOUTUBE](https://www.youtube.com/watch?v=rNd63vCU_ls) :computer:
 
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/rNd63vCU_ls?si=EIn-XYTsU4hfQFwL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 
 [![SteepSpots](https://img.youtube.com/vi/rNd63vCU_ls/0.jpg)](https://www.youtube.com/watch?v=rNd63vCU_ls)
 <br/><br/><br/>
