@@ -15,7 +15,7 @@ Looking ahead, SteepSpots will incorporate Google OAuth for seamless login, leve
 <br/><br/>
 
 
-### <a name="getting-started"></a>Getting Started
+## <a name="getting-started"></a>Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for further development, exploration and testing.
 
@@ -61,7 +61,7 @@ Then, run the application with ```python3 server.py```:
 You should see similar success messages in the console. If you have any issues getting up and running, please contact the author via GitHub.
 <br/><br/>
 
-### <a name="app-features"></a>App Features
+## <a name="app-features"></a>App Features
 Once it is up and running on your local machine, continue to run the demo freely, paying particular attention to the below pages.
 
 #### Home
@@ -87,7 +87,7 @@ From the user’s profile, users can view their favorited teas, and they can cli
 [![SteepSpots](https://img.youtube.com/vi/rNd63vCU_ls/0.jpg)](https://www.youtube.com/watch?v=rNd63vCU_ls)
 <br/><br/>
 
-### <a name="gen-info"></a>General Information
+## <a name="gen-info"></a>General Information
 
 #### Tech Stack
 
