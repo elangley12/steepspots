@@ -99,6 +99,7 @@ From the user’s profile, users can view their favorited teas, and they can cli
 * [PostgresSQL](https://www.postgresql.org/)
 * [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/)
 * [AJAX/JSON](https://developer.mozilla.org/en-US/docs/Glossary/AJAX)
+* [React](https://react.dev/)
 * [Bootstrap](https://getbootstrap.com/)
 * [Boonaki Tea API](https://boonaki.me/tea-api)
 
